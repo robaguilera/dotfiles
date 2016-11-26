@@ -1,0 +1,78 @@
+# Custom
+eval "$(fasd --init auto)"
+
+# Easier Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Shortcuts
+alias d="cd ~/Development"
+alias dl="cd ~/Downloads"
+
+# List all files in long format
+alias l="ls -lF ${colorflag}"
+
+# List all files in long format, including dot files
+alias la="ls -laF ${colorflag}"
+
+# List only directories
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+# Always use color output for `ls`
+alias ls="command ls ${colorflag}"
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Get week number
+alias week='date +%V'
+
+# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec $SHELL -l"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# FASD
+alias v='f -e vim'
+alias j='fasd_cd -d'
+alias o='a -e open'
+
+#Vagrant
+alias vag="vagrant up"
+alias vagin="vagrant ssh"
+
+#Git
+alias gits="git status"
+alias git.="git add ."
+alias gitm="git commit -m"
+alias gitp="git push origin master"
+
+# TMUX
+alias tm='/Users/robertaguilera/bin/tm'
+alias ta='tmux attach'
+alias tls='tmux ls'
+alias tat='tmux attach -t'
+alias tns='tmux new-session -s'
+
+# Helpers
+alias grep='grep --color=auto'
+alias df='df -h' # disk free, in Gigabytes, not bytes
+alias du='du -h -c' # calculate disk usage for a folder
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+# Set TMUX to use 256 colors
+[ -z "$TMUX" ] && export TERM=xterm-256color
