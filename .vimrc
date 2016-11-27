@@ -13,6 +13,7 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set clipboard=unnamed
 colo Tomorrow-Night-Eighties
 
 " This makes vim act like all other editors, buffers can
@@ -110,9 +111,10 @@ set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
-" keyboard shortcuts
+" keyboard shortcuts (need to move these to their own files)
+
 let mapleader = ','
-nnoremap <space> za
+nnoremap <space> za "Folds
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :CtrlP<CR>
@@ -129,7 +131,7 @@ noremap ; :
 " Insert Mode "
 imap <leader>w :w!
 imap jj <esc>
-"
+
 " split window management
 nnoremap <leader>h :split<CR>
 nnoremap <leader>j :vsplit<CR>
@@ -137,6 +139,13 @@ nnoremap <C-h> <C-w>r
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" language
+imap <leader>php i<?php ?><esc>hhi
+
+" plugins
+" Make emmet easier to invoke
+imap <C-e> <C-y>,
 
 " Following section needs to be abstracted
 function! PhpSyntaxOverride()
