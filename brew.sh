@@ -35,6 +35,9 @@ brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 brew install homebrew/php/php56 --with-gmp
 
+# Install neovim
+brew install neovim/neovim/neovim
+
 # Install font tools.
 brew tap bramstein/webfonttools
 brew install sfnt2woff
