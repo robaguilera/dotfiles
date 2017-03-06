@@ -1,0 +1,80 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/bz/srd8nc752dddzw6tl_0g64m40000gn/T/d-11724-5130-1q7t7je/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/bz/srd8nc752dddzw6tl_0g64m40000gn/T/d-11724-5130-1q7t7je/package.tgz",
+        "spec": "/private/var/folders/bz/srd8nc752dddzw6tl_0g64m40000gn/T/d-11724-5130-1q7t7je/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/bz/srd8nc752dddzw6tl_0g64m40000gn/T/apm-install-dir-11724-5130-15s3r6k"
+    ]
+  ],
+  "_from": "../d-11724-5130-1q7t7je/package.tgz",
+  "_id": "wordpress-suite@0.4.5",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/wordpress-suite",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/bz/srd8nc752dddzw6tl_0g64m40000gn/T/d-11724-5130-1q7t7je/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/bz/srd8nc752dddzw6tl_0g64m40000gn/T/d-11724-5130-1q7t7je/package.tgz",
+    "spec": "/private/var/folders/bz/srd8nc752dddzw6tl_0g64m40000gn/T/d-11724-5130-1q7t7je/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11724-5130-1q7t7je/package.tgz",
+  "_shasum": "e39c75c9c4f13cf637b05fe5b5147c0201e5953f",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/bz/srd8nc752dddzw6tl_0g64m40000gn/T/d-11724-5130-1q7t7je/package.tgz",
+  "_where": "/private/var/folders/bz/srd8nc752dddzw6tl_0g64m40000gn/T/apm-install-dir-11724-5130-15s3r6k",
+  "bugs": {
+    "url": "https://github.com/peterjohnhunt/wordpress-suite/issues"
+  },
+  "consumedServices": {
+    "autoreload": {
+      "versions": {
+        "^0.0.1": "consumeAutoreload"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-utils": "^0.9.2",
+    "command-exists": "^1.0.2",
+    "wp-cli": "0.0.5",
+    "yamljs": "^0.2.8"
+  },
+  "description": "Debug Watcher, WP-CLI Commands, Quick Tools.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/peterjohnhunt/wordpress-suite#readme",
+  "keywords": [
+    "wordpress",
+    "wp",
+    "notifications",
+    "debug",
+    "wp-cli",
+    "peterjohnhunt"
+  ],
+  "license": "MIT",
+  "main": "./lib/wordpress-suite",
+  "name": "wordpress-suite",
+  "optionalDependencies": {},
+  "readme": "![Wordpress Suite](https://raw.githubusercontent.com/peterjohnhunt/wordpress-suite/master/assets/logo.png \"Wordpress Suite\")\n\n## Summary\n**Wordpress Suite** is an ever expanding suite of Wordpress tools, accessible right from atom's interface!\n* [Installation](#installation)\n* [Features](#features)\n\t* [General](#general-features)\n\t* [Debug Watcher](#debug-watcher)\n\t* [WP CLI](#wp-cli)\n\t* [Context Menu](#context-menu)\n* [Settings](#settings)\n\t* [Enable / Disable Notification Types](#enable-disable-notification-types)\n* [Release Notes](#release-notes)\n* [Issues / Additions](#issues-additions)\n\n---\n\n## Installation\nAtom Package: https://atom.io/packages/wordpress-suite\n\n```bash\napm install wordpress-suite\n```\nOr Preferences ➔ Install ➔ Search for `wordpress-suite`\n\n## Features\n\n### General Features\n\n#### Add Project Root\nIf you're working in a specific theme or plugin, this shortcut adds the main Wordpress root folder to the sidebar.\n\n---\n\n### Debug Watcher\nUsing atoms built in file watching, each Wordpress site added to the TreeView will automatically be watched by atom.\n\n#### Notifications\nNotifications will automatically pop up for any changes in the debug log.\n\n![Debug Log | Notification](https://raw.githubusercontent.com/peterjohnhunt/wordpress-suite/master/assets/notification.gif \"Debug Log Notification\")\n\n#### Open/Clear Debug Log\nWhen a notification pops up you have the option to open or clear the debug log with just a push of a button! Clearing it will also hide all notifications currently related to that project.\n\n![Debug Log | Open / Clear](https://raw.githubusercontent.com/peterjohnhunt/wordpress-suite/master/assets/open_clear.gif \"Debug Log Open / Clear\")\n\n#### Pause and Resume Watching\nsuppress or resume any notifications of changes to the debug log on the current Wordpress project.\n\n![Debug Log | Pause / Resume ](https://raw.githubusercontent.com/peterjohnhunt/wordpress-suite/master/assets/pause_resume.gif \"Debug Log | Pause / Resume\")\n\n#### Show and Clear recent notifications\nshow all the most recent notifications that were closed since the last time the debug log was cleared or clear the debug log, and remove any notifications related to the current Wordpress project.\n\n#### Mute Notifications\nIf there is a reoccurring notification that you would like to mute, when it pops up, click the mute button in the bottom right to no longer see messages with this exact text.\n\n![Debug Log | Mute Notification](https://raw.githubusercontent.com/peterjohnhunt/wordpress-suite/master/assets/mute.gif \"Debug Log | Mute Notification\")\n\n#### Clear Muted Notifications\nUnder the context menu, you can clear all muted notifications.\n\n#### Stack Trace Links\nIn the event that Wordpress prints an error and references where the error occurred, the path to the file will automatically be converted into a quick link to open the file in the editor directly to the specified line.\n\n![Debug Log | File Link](https://raw.githubusercontent.com/peterjohnhunt/wordpress-suite/master/assets/file_link.gif \"Debug Log File Link\")\n\n---\n\n### WP CLI\nIf WP-CLI is installed locally, additional context menu items will be available to manage and manipulate your Wordpress projects.\n\n#### Site Name\nAutomatically retrieve the site name stored in the Wordpress database and use it in notification titles.\n\n#### Path Config\nAutomatically retrieve the Wordpress path from the local wp-cli.yml if it exists.\n\n#### Export Database\nThis will automatically generate a \"db\" folder in the root of the Wordpress project, it will then export the database to that db folder naming it \"latest-db.sql\" pulling from the credentials set in `wp-config.php`.\n\n#### Import Database\nThis will automatically export a backup of the database and then import \"latest-db.sql\" pulling from the credentials set in `wp-config.php`.\n\n---\n\n### Context Menu\nWhen right clicking a Wordpress project in the sidebar, you'll have a \"Wordpress\" dropdown which has lots of useful features including:\n\n#### Menu Items\n* Add Project Root\n* Show Notifications\n* Clear Notifications\n* Open Debug Log\n* Clear Ignored\n* Pause Watching\n* Resume Watching\n* Export Database\n* Import Database\n\n![Context Menu](https://raw.githubusercontent.com/peterjohnhunt/wordpress-suite/master/assets/context.gif \"Context Menu\")\n\n---\n\n## Settings\n\n### Enable / Disable Notification Types\nNotification types can be enabled and disabled via the package settings\n\n![Settings | Notification ](https://raw.githubusercontent.com/peterjohnhunt/wordpress-suite/master/assets/notification_settings.gif \"Notification Settings\")\n\n---\n\n## Release Notes\nFor release notes and version history, view the [change log](https://github.com/peterjohnhunt/wordpress-suite/blob/master/changelog.md#change-log).\n\n---\n\n## Issues / Additions\nFor any issues, additions or bugs, feel free to [open an issue](https://github.com/peterjohnhunt/wordpress-suite/issues/new) and include stack trace if applicable!\n\n---",
+  "readmeFilename": "readme.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterjohnhunt/wordpress-suite.git"
+  },
+  "version": "0.4.5"
+}

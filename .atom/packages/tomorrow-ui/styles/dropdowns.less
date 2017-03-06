@@ -1,0 +1,20 @@
+@import 'ui-variables';
+@import 'ui-mixins';
+@import 'octicon-mixins';
+
+.dropdown-menu {
+  padding: 0;
+
+  border-radius: @component-border-radius;
+  background-color: @overlay-background-color;
+
+  > li > a {
+    .text(normal);
+  }
+
+  > li > a:hover {
+    background-color: @background-color-highlight;
+
+    .text(highlight);
+  }
+}

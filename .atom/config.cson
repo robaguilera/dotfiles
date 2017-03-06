@@ -1,0 +1,48 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "5f80af2b-b863-4bfa-abf4-aca01f8b16e5"
+  "autocomplete-python":
+    useKite: false
+  core:
+    disabledPackages: [
+      "pigments"
+      "webbox-color"
+      "atom-ternjs"
+    ]
+    ignoredNames: [
+      ".git"
+      ".DS_Store"
+      "node_modules"
+      "bower_components"
+      "*.md"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "tomorrow-ui"
+      "tomorrow-night-eighties-syntax"
+    ]
+    useCustomTitleBar: true
+  editor:
+    fontFamily: "Hack"
+    fontSize: 17
+    lineHeight: 1.7
+    preferredLineLength: 100
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "940d8d6c-8e7d-833e-ea96-e160415e53a1"
+  "terminal-plus":
+    toggles: {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode-plus":
+    clearHighlightSearchOnResetNormalMode: true
+    stayOnYank: true
+  wakatime:
+    apikey: "Saved in your ~/.wakatime.cfg file"
+  "wakatime-hidden":
+    lastInit: 1488764588
+  welcome:
+    showOnStartup: false
