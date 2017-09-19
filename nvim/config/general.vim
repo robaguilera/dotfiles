@@ -5,13 +5,11 @@ syntax on
 " Neovim Settings
 
 " Aesthetics
-set background="dark" or light if you prefer the light version
-if (has("termguicolors"))
-  set termguicolors
-endif
 set background=dark
-colorscheme spacemacs-theme
+colorscheme one  
 let g:airline_theme='deus'
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 
 hi CursorLineNR guifg=tomato
 autocmd BufRead,BufNewFile *.md setlocal spell complete+=kspell

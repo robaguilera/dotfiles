@@ -21,7 +21,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'tomtom/tcomment_vim'
-  Plug 'scrooloose/syntastic'
+  Plug 'w0rp/ale'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'terryma/vim-expand-region'
@@ -42,7 +42,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Formatting
   Plug 'Yggdroot/indentLine'
   Plug 'Raimondi/delimitMate'
-  " Plug 'sbdchd/neoformat'
   Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
