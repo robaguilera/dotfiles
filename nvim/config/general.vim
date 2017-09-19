@@ -2,16 +2,6 @@ filetype plugin indent on
 syntax enable
 syntax on
 
-" required if using https://github.com/bling/vim-airline
-
-" Deoplete Init
-let g:deoplete#enable_at_startup = 1
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
-
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
 " Neovim Settings
 
 " Aesthetics
@@ -21,6 +11,7 @@ if (has("termguicolors"))
 endif
 set background=dark
 colorscheme spacemacs-theme
+let g:airline_theme='deus'
 
 hi CursorLineNR guifg=tomato
 autocmd BufRead,BufNewFile *.md setlocal spell complete+=kspell

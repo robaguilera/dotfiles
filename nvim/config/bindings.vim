@@ -28,7 +28,7 @@ noremap ;; :
 
 " Insert Mode "
 imap jj <esc>
-imap <leader>w <esc>:Neoformat<CR>:w<CR>
+" imap <leader>w <esc>:Neoformat<CR>:w<CR>
 " delete line while in insert mode
 inoremap <c-d> <esc>ddi
 
@@ -47,3 +47,6 @@ nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 
+nnoremap <leader>gits :Gstatus<CR>
+nnoremap <leader>gitc :GCommit<CR>
+nnoremap <leader>gitp :GPush<CR>

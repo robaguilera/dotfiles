@@ -16,7 +16,6 @@ let g:user_emmet_leader_key=','
 " autocomplete paths easier
 inoremap <c-f> <c-x><c-f>
 
-
 " Match Tag Always presets
 let g:mta_filetypes = {
       \ 'html' : 1,
@@ -24,9 +23,6 @@ let g:mta_filetypes = {
       \ 'xml' : 1,
       \ 'php.wordpress' : 1,
       \ }
-
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Prettier
 let g:prettier#autoformat = 0
@@ -86,3 +82,23 @@ let NERDTreeDirArrows = 1
 " Smooth Scroll
 let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+autocmd CompleteDone * pclose
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>" 
+let g:deoplete#enable_ignore_case = 0
+let g:deoplete#enable_smart_case = 0
+let g:deoplete#delimiters = ['/', '.', '::', ':', '#']
+let g:deoplete#auto_complete_delay = 0
+let g:deoplete#auto_refresh_delay = 0
+let g:neocomplete#min_pattern_length = 2
+
+" Tern JS
+let g:deoplete#sources#ternjs#case_insensitive = 1
+let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue',
+                \ '...'
+                \ ]
