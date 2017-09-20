@@ -48,6 +48,5 @@ nnoremap <leader>gits :Gstatus<CR>
 nnoremap <leader>gitc :GCommit<CR>
 nnoremap <leader>gitp :GPush<CR>
 
-nnoremap <leader>ll :Limelight<cr>
-nnoremap <leader>nn :Limelight!<cr>
+nnoremap <leader>ll :Limelight!!<cr>
 
