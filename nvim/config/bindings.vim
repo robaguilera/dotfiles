@@ -44,9 +44,10 @@ nnoremap <space> za
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-
 nnoremap <leader>gits :Gstatus<CR>
 nnoremap <leader>gitc :GCommit<CR>
 nnoremap <leader>gitp :GPush<CR>
+
+nnoremap <leader>ll :Limelight<cr>
+nnoremap <leader>nn :Limelight!<cr>
+

@@ -21,7 +21,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'tomtom/tcomment_vim'
-  Plug 'w0rp/ale'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'terryma/vim-expand-region'
@@ -65,5 +64,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rakr/vim-one'
   Plug 'rakr/vim-two-firewatch'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'junegunn/limelight.vim'
 
 call plug#end()
