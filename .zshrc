@@ -83,5 +83,5 @@ source $ZSH/oh-my-zsh.sh
 # My Customizations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[[ -f ~/.zshrc-plus ]] && source ~/.zshrc-plus
+[[ -f ~/.zshrc-plus ]] && source ~/dotfiles/.zshrc-plus
 
