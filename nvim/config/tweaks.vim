@@ -37,32 +37,6 @@ let g:prettier#config#bracket_spacing = 'true'
 " none|es5|all
 let g:prettier#config#trailing_comma = 'none'
 
-" FZF
-if executable('fzf')
-  " FZF {{{
-  nnoremap <silent> <C-p> :FZF -m<cr>
-
-  nnoremap <silent> <C-p> :Buffers<cr>
-
-  nnoremap <silent> <C-h> :History<cr>
-
-  " Use fuzzy completion relative filepaths across directory
-  imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
-
-  " Better command history with q:
-  command! CmdHist call fzf#vim#command_history({'right': '40'})
-  nnoremap q: :CmdHist<CR>
-
-  " Better search history
-  command! QHist call fzf#vim#search_history({'right': '40'})
-  nnoremap q/ :QHist<CR>
-
-  command! -bang -nargs=* Ack call fzf#vim#ag(<q-args>, {'down': '40%'})
-  " }}}
-else
-  " CtrlP fallback
-end
-
 " I love my girls pretty
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
