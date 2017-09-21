@@ -30,7 +30,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx']}
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'pangloss/vim-javascript'
-  Plug 'mxw/vim-jsx', {'for': []}
+  Plug 'mxw/vim-jsx'
+  "Plugin 'chemzqm/vim-jsx-improve'
   Plug 'valloric/MatchTagAlways'
 
   " Typescript Plugins

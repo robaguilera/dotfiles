@@ -1,5 +1,5 @@
 " Digging Fzf so much it's got it's own space
-
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 " set fzf to theme
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
@@ -17,9 +17,12 @@ let g:fzf_colors =
       \ 'header':  ['fg', 'Comment'] }
 
 let g:fzf_files_options =
-  \ '--preview "(coderay {} || rougify {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+  \ '--preview "(rougify {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
-nnoremap <silent> <C-p> :Files<cr>
+let g:fzf_find_options =
+      \ '--preview "(rougify {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
+nnoremap <silent> <C-p> :Find<cr>
 
 nnoremap <silent> <C-t> :Buffers<cr>
 
