@@ -1,5 +1,5 @@
-source ./config/plugins.vim
-source ./config/general.vim
-source ./config/tweaks.vim
-source ./config/bindings.vim
-source ./config/fzf.vim
+source $HOME/dotfiles/nvim/config/plugins.vim
+source $HOME/dotfiles/nvim/config/general.vim
+source $HOME/dotfiles/nvim/config/tweaks.vim
+source $HOME/dotfiles/nvim/config/bindings.vim
+source $HOME/dotfiles/nvim/config/fzf.vim
