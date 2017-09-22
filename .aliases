@@ -1,6 +1,3 @@
-# Custom
-eval "$(fasd --init auto)"
-
 # Easier Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -58,6 +55,10 @@ alias gits="git status"
 alias git.="git add ."
 alias gitm="git commit -m"
 alias gitp="git push origin master"
+
+# VIM/NEOVIM
+alias neo="nvim ."
+alias vim="nvim"
 
 # TMUX
 alias tm='/Users/robertaguilera/bin/tm'
