@@ -33,6 +33,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'mxw/vim-jsx'
   "Plugin 'chemzqm/vim-jsx-improve'
   Plug 'valloric/MatchTagAlways'
+  Plug 'styled-components/vim-styled-components'
 
   " Typescript Plugins
   Plug 'Shougo/vimproc.vim', { 'do' : 'make' }

@@ -19,11 +19,11 @@ let g:fzf_colors =
 let g:fzf_files_options =
   \ '--preview "(rougify {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
-nnoremap <silent> <C-w> :Find<cr>
+nnoremap <silent> <leader>f :Files<cr>
 
-nnoremap <silent> <C-p> :Files<cr>
+nnoremap <silent> <leader><leader>f :Find<cr>
 
-nnoremap <silent> <C-t> :Buffers<cr>
+nnoremap <silent> <leader>b :Buffers<cr>
 
 nnoremap <silent> <C-h> :History<cr>
 

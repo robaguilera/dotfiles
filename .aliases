@@ -46,15 +46,20 @@ alias v='f -e vim'
 alias j='fasd_cd -d'
 alias o='a -e open'
 
-#Vagrant
+# Vagrant
 alias vag="vagrant up"
 alias vagin="vagrant ssh"
 
-#Git
+# Git
 alias gits="git status"
 alias git.="git add ."
 alias gitm="git commit -m"
-alias gitp="git push origin master"
+
+# Development
+alias nrs="npm run start"
+alias nrw="npm run watch"
+alias yn="yarn"
+alias ya="yarn add"
 
 # VIM/NEOVIM
 alias neo="nvim ."
