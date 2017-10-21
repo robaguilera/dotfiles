@@ -68,3 +68,9 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ 'vue',
                 \ '...'
                 \ ]
+
+" tslime 
+let g:tslime_ensure_trailing_newlines = 1
+let g:tslime_normal_mapping = '<localleader>t'
+let g:tslime_visual_mapping = '<localleader>t'
+let g:tslime_vars_mapping = '<localleader>T'

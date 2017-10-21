@@ -10,6 +10,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'yuttie/comfortable-motion.vim'
   Plug 'tpope/vim-sleuth'
 
+  " Lisp
+  Plug 'l04m33/vlime', {'rtp': 'vim/'}
+  Plug 'sjl/tslime.vim'
+
   " Movement
   Plug 'easymotion/vim-easymotion'
   Plug 'epilande/vim-es2015-snippets'
@@ -23,10 +27,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tomtom/tcomment_vim'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'junegunn/goyo.vim'
   Plug 'terryma/vim-expand-region'
 
   " Javascript Plugins
-
   Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx']}
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'pangloss/vim-javascript'
@@ -67,5 +71,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rakr/vim-two-firewatch'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'junegunn/limelight.vim'
+  Plug 'dracula/vim'
 
 call plug#end()

@@ -136,3 +136,5 @@ if $(command -v fzf >/dev/null); then
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git/*,node_modules/*,bower_components/*}"'
 
 fi
+
+alias scheme="rlwrap -r -c -f ~/dotfiles/mit-scheme-bindings.txt scheme"

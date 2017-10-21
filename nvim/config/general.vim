@@ -6,7 +6,7 @@ syntax on
 
 " Aesthetics
 set background=dark
-colorscheme one  
+colorscheme one
 let g:airline_theme='deus'
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
