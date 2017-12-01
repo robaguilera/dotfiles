@@ -54,3 +54,12 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# Programmers logbook
+# 1. Consider the problem you're attemting to solve
+# 2. Describe your method for solving it
+# 3. Describe the process of carrying out the method
+# 4. Record what happened, and ask how it could be improved
+function lb() {
+	vim ~/logbook/$(date '+%Y-%m-%d').md
+}
