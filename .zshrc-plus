@@ -27,7 +27,7 @@ if $(command -v fzf >/dev/null); then
   }
 
   # fcda - including hidden directories
-  fcda() {
+  fcdh() {
     local dir
     dir=$(find ${1:-.} -type d 2>/dev/null | fzf +m) && cd "$dir"
   }
@@ -133,8 +133,9 @@ if $(command -v fzf >/dev/null); then
   }
 
   # Setting ag as the default source for fzf
-  export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git/*,node_modules/*,bower_components/*}"'
-
+ # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git/*,node_modules/*,bower_components/*}"'
+  export FZF_DEFAULT_COMMAND='rg --files --follow --glob "!.git/*"'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
 # alias scheme="rlwrap -r -c -f ~/dotfiles/mit-scheme-bindings.txt scheme"
