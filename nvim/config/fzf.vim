@@ -19,15 +19,15 @@ let g:fzf_colors =
 let g:fzf_files_options =
   \ '--preview "(rougify {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
-nnoremap <silent> <leader>f :Files<cr>
+nnoremap <leader>ff :Files<cr>
 
-nnoremap <silent> <leader><leader>f :Find<cr>
+nnoremap <leader><leader>f :Find<cr>
 
-nnoremap <silent> <leader>b :Buffers<cr>
+nnoremap <leader>b :Buffers<cr>
 
-nnoremap <silent> <C-h> :History<cr>
+nnoremap <C-h> :History<cr>
 
-nnoremap <silent> <C-s> :Snippets<cr>
+nnoremap <C-s> :Snippets<cr>
 
 " Use fuzzy completion relative filepaths across directory
 imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
