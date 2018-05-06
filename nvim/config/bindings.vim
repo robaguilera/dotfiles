@@ -52,11 +52,7 @@ nnoremap <leader>ll :Limelight!!<cr>
 
 " FZF
 nnoremap <leader><leader>f :Files<cr>
-
+nnoremap <leader><leader>f :Find<cr>
 nnoremap <leader>b :Buffers<cr>
-
-nnoremap <C-h> :History<cr>
-
-"nnoremap <C-s> :Snippets<cr>
-nnoremap <C-f> :Files<cr>
-
+nnoremap <c-h> :History<cr>
+nnoremap <c-s> :Snippets<cr>

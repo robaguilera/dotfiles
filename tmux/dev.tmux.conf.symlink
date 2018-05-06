@@ -1,4 +1,4 @@
-source-file ~/.tmux.conf
+source-file ~/.tmux.conf.symlink
 new-session -s dev -n ide
 split-window -v -p 10 -t dev
 select-pane -t 1

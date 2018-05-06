@@ -29,7 +29,7 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier augroup END
 
 " number of spaces per indentation level
-let g:prettier#config#tab_width = 4
+let g:prettier#config#tab_width = 2
 
 " print spaces between brackets
 let g:prettier#config#bracket_spacing = 'true'
@@ -48,29 +48,15 @@ let g:comfortable_motion_scroll_up_key = "k"
 " Indent Line
 let g:indentLine_enabled = 1
 
+" NERDTREE
+let NERDTreeShowHidden=1
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-autocmd CompleteDone * pclose
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>" 
-let g:deoplete#enable_ignore_case = 0
-let g:deoplete#enable_smart_case = 0
-let g:deoplete#delimiters = ['/', '.', '::', ':', '#']
-let g:deoplete#auto_complete_delay = 0
-let g:deoplete#auto_refresh_delay = 0
-let g:neocomplete#min_pattern_length = 2
+let g:deoplete#enable_smart_case = 1
 
-" Tern JS
-let g:deoplete#sources#ternjs#case_insensitive = 1
-let g:deoplete#sources#ternjs#filetypes = [
-                \ 'jsx',
-                \ 'js',
-                \ 'javascript.jsx',
-                \ 'vue',
-                \ '...'
-                \ ]
+" Disable the candidates in Comment/String syntaxes.
+call deoplete#custom#source('_',
+            \ 'disabled_syntaxes', ['Comment', 'String'])
 
-" tslime 
-let g:tslime_ensure_trailing_newlines = 1
-let g:tslime_normal_mapping = '<localleader>t'
-let g:tslime_visual_mapping = '<localleader>t'
-let g:tslime_vars_mapping = '<localleader>T'
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif

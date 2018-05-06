@@ -10,10 +10,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'yuttie/comfortable-motion.vim'
   Plug 'tpope/vim-sleuth'
 
-  " Lisp
-  Plug 'l04m33/vlime', {'rtp': 'vim/'}
-  Plug 'sjl/tslime.vim'
-
   " Movement
   Plug 'easymotion/vim-easymotion'
   Plug 'epilande/vim-es2015-snippets'
@@ -31,13 +27,17 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'terryma/vim-expand-region'
 
   " Javascript Plugins
-  Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx']}
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+  Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
-  "Plugin 'chemzqm/vim-jsx-improve'
-  Plug 'valloric/MatchTagAlways'
   Plug 'styled-components/vim-styled-components'
+
+  " Ember
+  Plug 'AndrewRadev/ember_tools.vim'
+  Plug 'joukevandermaas/vim-ember-hbs'
+  Plug 'mustache/vim-mustache-handlebars'
 
   " Typescript Plugins
   Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
@@ -50,6 +50,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+  Plug 'tmhedberg/matchit' 
 
   " Git
   Plug 'vim-airline/vim-airline'
