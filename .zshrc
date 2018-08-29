@@ -3,11 +3,12 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
+export TERM="xterm-256color"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -51,7 +52,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode history-substring-search fasd thefuck)
+plugins=(git vi-mode history-substring-search fasd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,6 +83,18 @@ source $ZSH/oh-my-zsh.sh
 
 # My Customizations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
 
-[[ -f ~/.zshrc-plus ]] && source ~/dotfiles/.zshrc-plus
+[[ -f ~/dotfiles/.zshrc-plus ]] && source ~/dotfiles/.zshrc-plus
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt pure
+
+# Syntax highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

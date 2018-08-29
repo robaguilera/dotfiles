@@ -18,6 +18,7 @@ hi SpellBad guibg=#ff2929 guifg=#f9f9f9" ctermbg=224
 " General Config
 set encoding=utf-8
 set number                      "Line numbers are good
+set relativenumber
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom

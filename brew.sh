@@ -23,7 +23,6 @@ brew install gnu-sed --with-default-names
 # running `chsh`.
 brew install bash
 brew tap homebrew/versions
-brew install bash-completion2
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
@@ -47,7 +46,6 @@ brew install woff2
 # Install other useful binaries.
 brew install ack
 brew install dark-mode
-#brew install exiv2
 brew install git
 brew install git-lfs
 brew install lua

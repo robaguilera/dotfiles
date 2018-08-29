@@ -56,10 +56,21 @@ function tre() {
 }
 
 # Programmers logbook
-# 1. Consider the problem you're attemting to solve
-# 2. Describe your method for solving it
-# 3. Describe the process of carrying out the method
-# 4. Record what happened, and ask how it could be improved
 function lb() {
-	vim ~/logbook/$(date '+%Y-%m-%d').md
+	FILE=~/Dropbox/logbook/$(date '+%Y-%m-%d').md
+	if [ ! -f $FILE ]; then
+		echo "1. Consider the problem you're attempting to solve" >> ${FILE}
+		echo "2. Describe your method for solving it" >> ${FILE}
+		echo "3. Describe the process of carrying out the method" >> ${FILE}
+		echo "4. Record what happened, and ask how it could be improved" >> ${FILE}
+	fi;
+	vim $FILE;
+}
+
+function til() {
+	FILE=~/Dropbox/til/$(date '+%Y-%m-%d').md
+	if [ ! -f $FILE ]; then
+	echo "Today I Learned:" >> ${FILE}
+	fi;
+	vim $FILE;
 }

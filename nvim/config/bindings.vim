@@ -51,8 +51,8 @@ nnoremap <leader>gitp :GPush<CR>
 nnoremap <leader>ll :Limelight!!<cr>
 
 " FZF
-nnoremap <leader><leader>f :Files<cr>
-nnoremap <leader><leader>f :Find<cr>
-nnoremap <leader>b :Buffers<cr>
+nnoremap <c-y> :Files<cr>
+nnoremap <c-g> :Find<cr>
+nnoremap <c-b> :Buffers<cr>
 nnoremap <c-h> :History<cr>
 nnoremap <c-s> :Snippets<cr>

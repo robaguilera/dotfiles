@@ -139,9 +139,9 @@ if $(command -v fzf >/dev/null); then
 fi
 
 # alias scheme="rlwrap -r -c -f ~/dotfiles/mit-scheme-bindings.txt scheme"
-\
-  # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
+#
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:/opt/aplos/bin:$PATH"
 
 # Load the following dotfiles
 # * ~/.path can be used to extend `$PATH`

@@ -39,18 +39,14 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'joukevandermaas/vim-ember-hbs'
   Plug 'mustache/vim-mustache-handlebars'
 
-  " Typescript Plugins
-  Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
-  Plug 'Quramy/tsuquyomi', { 'do': 'npm install -g typescript' }
-  Plug 'mhartington/deoplete-typescript'
-
   " Formatting
   Plug 'Yggdroot/indentLine'
   Plug 'Raimondi/delimitMate'
   Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
-  Plug 'tmhedberg/matchit' 
+  Plug 'tmhedberg/matchit'
+  Plug 'w0rp/ale'
 
   " Git
   Plug 'vim-airline/vim-airline'
