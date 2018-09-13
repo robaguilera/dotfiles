@@ -13,7 +13,7 @@ prompt pure
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # My Customizations
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ./.fzfLove
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ./dotfiles/.fzfLove
 
 
 # Add `~/bin` to the `$PATH`

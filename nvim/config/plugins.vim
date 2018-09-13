@@ -8,9 +8,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-sleuth'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
   " Movement
-  Plug 'easymotion/vim-easymotion'
   Plug 'epilande/vim-es2015-snippets'
   Plug 'epilande/vim-react-snippets'
   Plug 'SirVer/ultisnips'
@@ -21,7 +21,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'tomtom/tcomment_vim'
   Plug 'terryma/vim-multiple-cursors'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'junegunn/goyo.vim'
   Plug 'terryma/vim-expand-region'
 
