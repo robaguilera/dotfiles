@@ -52,8 +52,8 @@ if $(command -v fzf >/dev/null); then
           fi
   }
 
-  # fgco - checkout git branch/tag
-  fgco() {
+  # fgcb - checkout git branch/tag
+  fgcb() {
     local tags branches target
       tags=$(
           git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}'
@@ -73,8 +73,8 @@ if $(command -v fzf >/dev/null); then
       git checkout $(echo "$target" | awk '{print $2}')
   }
 
-  # fgcoc - checkout git commit
-  fgcoc() {
+  # fgcc - checkout git commit
+  fgcc() {
     local commits commit
       commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
       commit=$(echo "$commits" | fzf --tac +s +m -e) &&
@@ -131,12 +131,6 @@ if $(command -v fzf >/dev/null); then
               done
   }
 
-  # fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
-  v() {
-    [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
-    local file
-    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
-  }
 
   # Setting ag as the default source for fzf
   # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git/*,node_modules/*,bower_components/*}"'
