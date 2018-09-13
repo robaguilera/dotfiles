@@ -2,22 +2,7 @@ export FZF_DEFAULT_OPS="--extended"
 
 if $(command -v fzf >/dev/null); then
 
-  # fo [FUZZY PATTERN] - Open the selected file with the default editor
-  #   - Bypass fuzzy finder if there's only one match (--select-1)
-  #   - Exit if there's no match (--exit-0)
-  #   - CTRL-O to open with `open` command,
-  #   - CTRL-E or Enter key to open with the $EDITOR
-  fo() {
-    local out file key
-      out=$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)
-      key=$(head -1 <<<"$out")
-      file=$(head -2 <<<"$out" | tail -1)
-      if [ -n "$file" ]; then
-        [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
-          fi
-  }
-
-  # fcd - cd to selected directory
+  # cd to selected directory
   fcd() {
     local dir
       dir=$(find ${1:-*} -path '*/\.*' -prune \
@@ -25,32 +10,40 @@ if $(command -v fzf >/dev/null); then
       cd "$dir"
   }
 
-  # fcda - including hidden directories
-  fcdh() {
+  # including hidden directories
+  fhide() {
     local dir
       dir=$(find ${1:-.} -type d 2>/dev/null | fzf +m) && cd "$dir"
   }
 
-  # cdf - cd into the directory of the selected file
-  fcdf() {
+  # open in vscode to selected directory
+  fcode() {
+    local dir
+      dir=$(find ${1:-*} -path '*/\.*' -prune \
+          -o -type d -print 2>/dev/null | fzf +m) &&
+      code "$dir"
+  }
+
+  # cd into the directory of the selected file
+  ffile() {
     local file
       local dir
       file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
   }
 
-  # cd vim - cd into the directory of the selected file and open it in vim
-  fcdv() {
+  # cd into the directory of the selected file and open it in vim
+  fv() {
     local file
       local dir
       file=$(fzf +m -q "$1") && dir=$(dirname "$file") && nvim "$file"
   }
 
-  # fh - repeat history
+  # repeat history
   fh() {
     print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
   }
 
-  # fkill - kill process
+  # kill process
   fkill() {
     pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
@@ -59,7 +52,7 @@ if $(command -v fzf >/dev/null); then
           fi
   }
 
-  # fgcb - checkout git branch/tag
+  # checkout git branch/tag
   fgcb() {
     local tags branches target
       tags=$(
@@ -80,7 +73,7 @@ if $(command -v fzf >/dev/null); then
       git checkout $(echo "$target" | awk '{print $2}')
   }
 
-  # fgcc - checkout git commit
+  # checkout git commit
   fgcc() {
     local commits commit
       commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
@@ -88,7 +81,7 @@ if $(command -v fzf >/dev/null); then
       git checkout $(echo "$commit" | sed "s/ .*//")
   }
 
-  # fgshow - git commit browser
+  # git commit browser
   fgshow() {
     git log --graph --color=always \
                             --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
@@ -100,7 +93,7 @@ if $(command -v fzf >/dev/null); then
     FZF-EOF"
   }
 
-  # fgcs - get git commit sha
+  # get git commit sha
   # example usage: git rebase -i `fcs`
   fgcs() {
     local commits commit
@@ -109,7 +102,7 @@ if $(command -v fzf >/dev/null); then
       echo -n $(echo "$commit" | sed "s/ .*//")
   }
 
-  # fgstash - easier way to deal with stashes
+  # easier way to deal with stashes
   # type fstash to get a list of your stashes
   # enter shows you the contents of the stash
   # ctrl-d shows a diff of the stash against your current HEAD
