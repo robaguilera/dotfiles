@@ -7,7 +7,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'yuttie/comfortable-motion.vim'
   Plug 'tpope/vim-sleuth'
 
   " Movement

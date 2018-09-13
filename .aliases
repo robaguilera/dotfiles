@@ -56,8 +56,8 @@ alias yn="yarn"
 alias ya="yarn add"
 
 # VIM/NEOVIM
+alias vim="nvim ."
 alias neo="nvim ."
-# alias vim="nvim"
 
 # VSCODE
 alias code="code-insiders ."
@@ -78,7 +78,3 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Set TMUX to use 256 colors
 [ -z "$TMUX" ] && export TERM=xterm-256color
-
-# Work Scripts
-# Update Aplos Builds
-alias fu='cd ~/aplos/work; ./build/fetchall.sh; ./build/updateall.sh -b master && ./build/u    pdateall.sh -b dev'
