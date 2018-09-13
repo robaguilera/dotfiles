@@ -46,11 +46,22 @@ alias o='a -e open'
 # Git
 alias gits="git status"
 alias git.="git add ."
-alias save="!git add -A; git commit -m \"$@\"; git push; git fetch origin -p; #"
-alias wip="git add -A; git ls-files --deleted -z | xargs -r0 git rm; git commit -m \"--wip--\"; git push; git fetch origin -p; #"
-alias what="git fetch origin -p; git branch -a; git log -10 --pretty=format:\"%h - %<(80,trunc)%s - %an, %ar (%cn %cr)\"; git status"
-alias pretty="git log --oneline --decorate --graph --all"
-alias fix="git add -A; git commit --amend --no-edit"
+alias gwip="git add -A; git ls-files --deleted -z | xargs -r0 git rm; git commit -m \"--wip--\"; git push; git fetch origin -p; #"
+alias gwhat="git fetch origin -p; git branch -a; git log -10 --pretty=format:\"%h - %<(80,trunc)%s - %an, %ar (%cn %cr)\"; git status"
+alias gpretty="git log --oneline --decorate --graph --all"
+alias gfix="git add -A; git commit --amend --no-edit"
+
+function gsave() {
+    git add .
+    if [ "$1" != "" ] # or better, if [ -n "$1" ]
+    then
+        git commit -m "$1"
+    else
+        git commit -m update
+    fi
+    git push
+    git fetch origin -p
+}
 
 # Development
 alias nrs="npm run start"
