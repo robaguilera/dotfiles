@@ -47,6 +47,7 @@ alias o='a -e open'
 alias gits="git status"
 alias git.="git add ."
 alias gitm="git commit -m"
+alias wip="git add . && git commit -m 'WIP' && git push"
 
 # Development
 alias nrs="npm run start"
@@ -56,7 +57,7 @@ alias ya="yarn add"
 
 # VIM/NEOVIM
 alias neo="nvim ."
-alias vim="nvim"
+# alias vim="nvim"
 
 # VSCODE
 alias code="code-insiders ."
@@ -69,13 +70,15 @@ alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
 
 # Helpers
-alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
 alias du='du -h -c' # calculate disk usage for a folder
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
-alias fuckingEmber="find . -name 'tmp' -type d -ls -delete"
 
 # Set TMUX to use 256 colors
 [ -z "$TMUX" ] && export TERM=xterm-256color
+
+# Work Scripts
+# Update Aplos Builds
+alias fu='cd ~/aplos/work; ./build/fetchall.sh; ./build/updateall.sh -b master && ./build/u    pdateall.sh -b dev'
