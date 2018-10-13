@@ -1,9 +1,6 @@
 # Path
 ZSH=$HOME/.oh-my-zsh
 
-# Custom Shit
-source ~/.bin/tmuxinator.zsh
-
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt pure
