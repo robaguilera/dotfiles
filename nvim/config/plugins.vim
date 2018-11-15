@@ -20,7 +20,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'tomtom/tcomment_vim'
-  Plug 'terryma/vim-multiple-cursors'
   Plug 'junegunn/goyo.vim'
   Plug 'terryma/vim-expand-region'
 
@@ -34,7 +33,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Ember
   Plug 'AndrewRadev/ember_tools.vim'
-  Plug 'joukevandermaas/vim-ember-hbs'
   Plug 'mustache/vim-mustache-handlebars'
 
   " Formatting

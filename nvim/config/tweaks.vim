@@ -51,6 +51,9 @@ let g:indentLine_enabled = 1
 " NERDTREE
 let NERDTreeShowHidden=1
 
+" HANDLEBARS STUFF
+let g:mustache_abbreviations = 1
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
