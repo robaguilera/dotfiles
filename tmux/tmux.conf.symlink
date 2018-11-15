@@ -83,22 +83,25 @@ bind -r L resize-pane -R 10
 # enable mouse support for switching panes/windows
 setw -g mouse on
 
-# set vi mode for copy mode
-setw -g mode-keys vi
-# more settings to make copy-mode more vim-like
-unbind [
-bind Escape copy-mode
-unbind p
-bind p paste-buffer
-bind -Tcopy-mode-vi 'v' send -X begin-selection
-bind -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "tmux save-buffer - | reattach-to-user-namespace pbcopy"
-
-# Buffers to/from Mac clipboard, yay tmux book from pragprog
-bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
-bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
-
 ##############################
 ### Color & Style Settings ###
 ##############################
+
+# Copy-paste integration
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# Setup 'v' to begin selection as in Vim
+bind-key -t vi-copy v begin-selection
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Update default binding of `Enter` to also use copy-pipe
+unbind -t vi-copy Enter
+bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Bind ']' to use pbpaste
+bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
 
 source ~/.dotfiles/tmux/theme.sh
