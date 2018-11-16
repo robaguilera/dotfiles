@@ -7,7 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'tpope/vim-sleuth'
+  " Plug 'tpope/vim-sleuth'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
   " Movement
