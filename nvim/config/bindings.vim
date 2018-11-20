@@ -5,7 +5,6 @@ let mapleader = ','
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
 nmap <leader>src :source %<cr>
-nmap <leader>gt :tabn<cr>
 
 " Navigate between display lines
 noremap  <silent> <Up>   gk
@@ -21,7 +20,7 @@ vmap < <gv
 vmap > >gv
 " Copy to osx clipboard
 vnoremap <C-c> "*y<CR>
-vnoremap <c-/> :TComment<cr> 
+vnoremap <leader>/ :TComment<cr> 
 
 " Remap
 noremap ;; :
@@ -30,7 +29,6 @@ noremap ;; :
 imap jj <esc>
 " imap <leader>w <esc>:Neoformat<CR>:w<CR>
 " delete line while in insert mode
-inoremap <c-d> <esc>ddi
 
 " split window management
 nnoremap <leader>h :split<CR>
@@ -43,6 +41,7 @@ nnoremap <space> za
 " plugins
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
+nnoremap <leader>nr :NERDTreeRefreshRoot<CR>
 
 nnoremap <leader>gits :Gstatus<CR>
 nnoremap <leader>gitc :GCommit<CR>
@@ -51,8 +50,8 @@ nnoremap <leader>gitp :GPush<CR>
 nnoremap <leader>ll :Limelight!!<cr>
 
 " FZF
-nnoremap <c-y> :Files<cr>
-nnoremap <c-g> :Find<cr>
+nnoremap <c-p> :Files<cr>
+nnoremap <c-f> :Find<cr>
 nnoremap <c-b> :Buffers<cr>
 nnoremap <c-h> :History<cr>
 nnoremap <c-s> :Snippets<cr>

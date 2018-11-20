@@ -4,17 +4,15 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Global Plugins
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'christoomey/vim-tmux-navigator'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  " Plug 'tpope/vim-sleuth'
+  Plug 'tpope/vim-sleuth'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
   " Movement
   Plug 'epilande/vim-es2015-snippets'
   Plug 'epilande/vim-react-snippets'
   Plug 'SirVer/ultisnips'
-  Plug 'https://github.com/wesQ3/vim-windowswap'
 
   " Text Manipulation
   Plug 'tpope/vim-surround'
@@ -41,15 +39,12 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
-  Plug 'tmhedberg/matchit'
-  Plug 'w0rp/ale'
+  " Plug 'w0rp/ale'
 
   " Git
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
-  Plug 'mattn/webapi-vim'
-  Plug 'mattn/gist-vim'
 
   " CSS
   Plug 'ap/vim-css-color'
@@ -59,11 +54,12 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'mattn/emmet-vim'
 
   " Style
-  Plug 'ryanoasis/vim-devicons'
+  " Plug 'ryanoasis/vim-devicons'
   Plug 'rakr/vim-one'
   Plug 'rakr/vim-two-firewatch'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'junegunn/limelight.vim'
   Plug 'dracula/vim'
+  Plug 'morhetz/gruvbox'
 
 call plug#end()

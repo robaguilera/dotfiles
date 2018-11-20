@@ -19,7 +19,7 @@ if &t_Co >= 256 || has("gui_running")
 		hi Normal ctermbg=0 ctermfg=7 cterm=NONE guibg=#312e39 guifg=#c0a79a gui=NONE
 	set background=dark
 		hi NonText ctermbg=NONE ctermfg=0 cterm=NONE guibg=NONE guifg=#33303b gui=NONE
-		hi Comment ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#4f4b58 gui=NONE
+		hi Comment ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#FFF gui=#FFF
 		hi Constant ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#71949a gui=NONE
 		hi Error ctermbg=1 ctermfg=7 cterm=NONE guibg=#87404f guifg=#c0a79a gui=NONE
 		hi Identifier ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#87404f gui=NONE
