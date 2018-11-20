@@ -16,14 +16,6 @@ let g:user_emmet_leader_key=','
 " autocomplete paths easier
 inoremap <c-f> <c-x><c-f>
 
-" Match Tag Always presets
-let g:mta_filetypes = {
-      \ 'html' : 1,
-      \ 'xhtml' : 1,
-      \ 'xml' : 1,
-      \ 'php.wordpress' : 1,
-      \ }
-
 " Prettier
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier augroup END
@@ -64,3 +56,4 @@ call deoplete#custom#source('_',
             \ 'disabled_syntaxes', ['Comment', 'String'])
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+

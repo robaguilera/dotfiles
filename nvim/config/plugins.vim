@@ -36,9 +36,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Formatting
   Plug 'Yggdroot/indentLine'
   Plug 'Raimondi/delimitMate'
-  Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
   " Plug 'w0rp/ale'
 
   " Git
