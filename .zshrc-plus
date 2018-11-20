@@ -1,13 +1,8 @@
-# Path
-ZSH=$HOME/.oh-my-zsh
-
-# My Customizations
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ~/dotfiles/.fzfLove
 
 # Load the following dotfiles
 # * ~/.path can be used to extend `$PATH`
 # * ~/.extra can be used to extend anything that doesn't fit in any other file
-for file in ~/dotfiles/.{path,aliases,exports,functions}; do
+for file in ~/dotfiles/.{path,aliases,exports,functions, fzfLove}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
