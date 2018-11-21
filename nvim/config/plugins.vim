@@ -26,6 +26,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
   Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
   Plug 'pangloss/vim-javascript'
+  Plug 'jelera/vim-javascript-syntax'
   Plug 'mxw/vim-jsx'
   Plug 'styled-components/vim-styled-components'
 
@@ -34,14 +35,14 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'mustache/vim-mustache-handlebars'
 
   " Formatting
-  Plug 'Yggdroot/indentLine'
   Plug 'Raimondi/delimitMate'
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-  " Plug 'w0rp/ale'
+  Plug 'w0rp/ale'
 
   " Git
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
+  Plug 'junegunn/gv.vim'
   Plug 'airblade/vim-gitgutter'
 
   " CSS
@@ -53,11 +54,14 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Style
   " Plug 'ryanoasis/vim-devicons'
+  Plug 'Yggdroot/indentLine', { 'on' : 'IndentLinesEnable'}
+  autocmd! User indentline doautocmd indentLine Syntax
   Plug 'rakr/vim-one'
   Plug 'rakr/vim-two-firewatch'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'junegunn/limelight.vim'
   Plug 'dracula/vim'
+  Plug 'junegunn/seoul256.vim'
   Plug 'morhetz/gruvbox'
 
 call plug#end()

@@ -6,8 +6,8 @@ syntax on
 
 " Aesthetics
 set background=dark
-colorscheme gruvbox
-let g:airline_theme='deus'
+colorscheme dracula
+let g:airline_theme='dracula'
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
@@ -93,9 +93,4 @@ set directory=~/.vim-tmp,~/.tmp,~./tmp,/var/tmp,/tmp
 
 " ================ Syntax ========================
 let g:jsx_ext_required = 0
-
-" ================ Colors ========================
-let g:gruvbox_contrast = 'dark'
-let g:gruvbox_invert_indent_guides = '1'
-
 
