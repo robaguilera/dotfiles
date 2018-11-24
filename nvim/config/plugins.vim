@@ -53,7 +53,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'mattn/emmet-vim'
 
   " Style
-  " Plug 'ryanoasis/vim-devicons'
+  Plug 'ryanoasis/vim-devicons'
   Plug 'Yggdroot/indentLine', { 'on' : 'IndentLinesEnable'}
   autocmd! User indentline doautocmd indentLine Syntax
   Plug 'rakr/vim-one'
@@ -61,7 +61,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'junegunn/limelight.vim'
   Plug 'dracula/vim'
-  Plug 'junegunn/seoul256.vim'
   Plug 'morhetz/gruvbox'
+  Plug 'kristijanhusak/vim-carbon-now-sh'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 
 call plug#end()

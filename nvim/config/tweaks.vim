@@ -29,7 +29,8 @@ let g:prettier#config#bracket_spacing = 'true'
 " none|es5|all
 let g:prettier#config#trailing_comma = 'none'
 
-" I love my girls pretty
+" NERDTREE
+let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
@@ -39,9 +40,6 @@ let g:comfortable_motion_scroll_up_key = "k"
 
 " Indent Line
 let g:indentLine_enabled = 1
-
-" NERDTREE
-let NERDTreeShowHidden=1
 
 " HANDLEBARS STUFF
 let g:mustache_abbreviations = 1

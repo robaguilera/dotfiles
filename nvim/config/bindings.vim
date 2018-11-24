@@ -47,7 +47,6 @@ noremap ;; :
 
 " Insert Mode "
 imap jj <esc>
-" imap <leader>w <esc>:Neoformat<CR>:w<CR>
 " delete line while in insert mode
 
 " split window management
