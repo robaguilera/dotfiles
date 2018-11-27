@@ -132,7 +132,7 @@ if $(command -v fzf >/dev/null); then
   }
 
 
-  # Setting ag as the default source for fzf
-  export FZF_DEFAULT_COMMAND='rg --files --follow --glob "!.git/*"'
+  # Setting rg as the default source for fzf
+  export FZF_DEFAULT_COMMAND='rg --files --follow --hidden --glob "!.git/*,!node_modules/*,!bower_components/*, !tmp/*"'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
