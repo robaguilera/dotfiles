@@ -44,6 +44,9 @@ let g:indentLine_enabled = 1
 " HANDLEBARS STUFF
 let g:mustache_abbreviations = 1
 
+" ALE
+let b:ale_fixers = ['prettier', 'eslint']
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1

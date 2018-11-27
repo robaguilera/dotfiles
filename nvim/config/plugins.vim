@@ -20,6 +20,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tomtom/tcomment_vim'
   Plug 'junegunn/goyo.vim'
   Plug 'terryma/vim-expand-region'
+  Plug 'adelarsq/vim-matchit'
 
   " Javascript Plugins
   Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
@@ -42,6 +43,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Git
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
+  Plug 'tommcdo/vim-fubitive'
   Plug 'junegunn/gv.vim'
   Plug 'airblade/vim-gitgutter'
 
