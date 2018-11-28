@@ -52,7 +52,7 @@ CASE_SENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export NVM_LAZY_LOAD=true
-plugins=(git vi-mode history-substring-search fasd zsh-nvm)
+plugins=(k git vi-mode history-substring-search fasd zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,8 +82,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 # My Customizations
-[[ -f ~/dotfiles/.zshrc-plus ]] && source ~/dotfiles/.zshrc-plus
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -f ~/dotfiles/.zshrc-plus ]] && source ~/dotfiles/.zshrc-plus
 [[ -f ~/.workAliases ]] && source ~/.workAliases
 
 autoload -U promptinit; promptinit

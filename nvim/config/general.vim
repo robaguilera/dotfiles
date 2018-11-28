@@ -57,9 +57,10 @@ set laststatus=2
 
 " ================ Folds ============================
 
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
+set foldmethod=syntax   "fold based on indent
+set foldcolumn=1
+let javaScript_fold=1
+set foldlevelstart=99
 
 " ================ Completion =======================
 

@@ -1,6 +1,6 @@
 # Automatically list out contents when changing directories
 function cd {
-  builtin cd "$@" && ls -al
+  builtin cd "$@" && k
 }
 
 # Determine size of a file or total size of a directory

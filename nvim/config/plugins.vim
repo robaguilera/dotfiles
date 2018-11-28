@@ -23,8 +23,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'adelarsq/vim-matchit'
 
   " Javascript Plugins
-  Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-  Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+  " Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+  " Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
   Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
   Plug 'pangloss/vim-javascript'
   Plug 'jelera/vim-javascript-syntax'
