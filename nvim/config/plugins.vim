@@ -7,7 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-sleuth'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
   " Movement
   Plug 'epilande/vim-es2015-snippets'
@@ -24,8 +24,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Javascript Plugins
   Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-  " Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-  " Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
   Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
   Plug 'pangloss/vim-javascript'
   Plug 'jelera/vim-javascript-syntax'
@@ -67,6 +67,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'kristijanhusak/vim-carbon-now-sh'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'skywind3000/asyncrun.vim'
 
 
 call plug#end()
