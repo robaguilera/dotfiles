@@ -6,45 +6,69 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'tpope/vim-sleuth'
-  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
   " Movement
   Plug 'epilande/vim-es2015-snippets'
   Plug 'epilande/vim-react-snippets'
-  Plug 'SirVer/ultisnips'
+
+  " Neovim: {{{
+  if has('nvim')
+    " abstraction on top of neovim terminal
+    Plug 'kassio/neoterm'
+
+    " run tests at the speed of thought
+    Plug 'janko-m/vim-test'
+
+    " Highlight Yanked String
+    Plug 'machakann/vim-highlightedyank'
+
+    " Language Server Protocol (LSP) support for vim and neovim
+    Plug 'autozimu/LanguageClient-neovim', {
+          \ 'branch': 'next',
+          \ 'do': 'bash install.sh',
+          \ }
+  endif
+  " }}}
 
   " Text Manipulation
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'tomtom/tcomment_vim'
   Plug 'junegunn/goyo.vim'
-  Plug 'terryma/vim-expand-region'
-  Plug 'adelarsq/vim-matchit'
 
   " Javascript Plugins
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-  Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-  Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
-  Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+  " JavaScript support (required by vim-jsx)
   Plug 'pangloss/vim-javascript'
-  Plug 'jelera/vim-javascript-syntax'
-  Plug 'mxw/vim-jsx'
-  Plug 'styled-components/vim-styled-components'
+
+  " React:
+    " JSX support for react components
+    Plug 'mxw/vim-jsx'
+
+    " A Vim plugin that provides functions that modify React source files 
+    Plug 'mvolkmann/vim-react', { 'for': 'javascript.jsx' }
+
+    " extract partial render, rename tag, select self close tags
+    Plug 'samuelsimoes/vim-jsx-utils', { 'for': 'javascript.jsx' }
+
+
+  " JSON manipulation
+  Plug 'tpope/vim-jdaddy', { 'for': 'json' }
+
+  " syntax highlighting for styled components
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main', 'for': 'javascript.jsx' }
 
   " Ember
   Plug 'AndrewRadev/ember_tools.vim'
   Plug 'mustache/vim-mustache-handlebars'
 
   " Formatting
-  Plug 'Raimondi/delimitMate'
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
   Plug 'w0rp/ale'
 
   " Git
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
-  Plug 'tommcdo/vim-fubitive'
   Plug 'junegunn/gv.vim'
   Plug 'airblade/vim-gitgutter'
 
@@ -56,18 +80,23 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'mattn/emmet-vim'
 
   " Style
-  Plug 'ryanoasis/vim-devicons'
-  Plug 'Yggdroot/indentLine', { 'on' : 'IndentLinesEnable'}
-  autocmd! User indentline doautocmd indentLine Syntax
-  Plug 'rakr/vim-one'
-  Plug 'rakr/vim-two-firewatch'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'junegunn/limelight.vim'
   Plug 'dracula/vim'
-  Plug 'morhetz/gruvbox'
   Plug 'kristijanhusak/vim-carbon-now-sh'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  Plug 'skywind3000/asyncrun.vim'
+  Plug 'ryanoasis/vim-devicons'
+
+  " ?? What do these do?? "
+  " Plug 'Yggdroot/indentLine', { 'on' : 'IndentLinesEnable'}
+  " autocmd! User indentline doautocmd indentLine Syntax
+  " Plug 'skywind3000/asyncrun.vim'
+  " Plug 'tommcdo/vim-fubitive'
+  " Plug 'Raimondi/delimitMate'
+  " Plug 'terryma/vim-expand-region'
+  " Plug 'adelarsq/vim-matchit'
+  " Plug 'tpope/vim-sleuth'
+  " Plug 'SirVer/ultisnips'
 
 
 call plug#end()

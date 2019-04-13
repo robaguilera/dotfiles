@@ -36,13 +36,12 @@ xnoremap > >gv
 " Align blocks of text and keep them selected
 vmap < <gv
 vmap > >gv
-" Copy to osx clipboard
 vnoremap <C-c> "*y<CR>
 vnoremap <leader>/ :TComment<cr> 
 
 " ----------------------------------------------------------------------------
 " Remap
-" ----------------------------------------------------------------------------
+" --------------------------------------------
 noremap ;; :
 
 " Insert Mode "
@@ -71,8 +70,8 @@ nnoremap <leader>ll :Limelight!!<cr>
 " ----------------------------------------------------------------------------
 " FZF
 " ----------------------------------------------------------------------------
-nnoremap <c-p> :Files<cr>
-nnoremap <c-f> :Find<cr>
-nnoremap <c-b> :Buffers<cr>
-nnoremap <c-h> :History<cr>
-nnoremap <c-s> :Snippets<cr>
+nnoremap <c-p> :call FZFOpen(':Files')<CR>
+nnoremap <c-f> :call FZFOpen(':Find')<cr>
+nnoremap <c-b> :call FZFOpen(':Buffers')<cr>
+nnoremap <c-y> :call FZFOpen(':History')<cr>
+nnoremap <c-s> :call FZFOpen(':Snippets')<cr>

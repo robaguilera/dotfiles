@@ -1,12 +1,11 @@
 filetype plugin indent on
 syntax enable
 syntax on
-
-" Neovim Settings
+set encoding=utf-8
 
 " Aesthetics
 set background=dark
-colorscheme dracula
+colorscheme deus
 let g:airline_theme='dracula'
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
@@ -16,18 +15,20 @@ autocmd BufRead,BufNewFile *.md setlocal spell complete+=kspell
 hi SpellBad guibg=#ff2929 guifg=#f9f9f9" ctermbg=224
 
 " General Config
-set encoding=utf-8
-set number                      "Line numbers are good
+set number                  " Line numbers are good
 set relativenumber
-set backspace=indent,eol,start  "Allow backspace in insert mode
-set history=1000                "Store lots of :cmdline history
-set showcmd                     "Show incomplete cmds down the bottom
-set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
-set visualbell                  "No sounds
-set autoread                    "Reload files changed outside vim
-" set relativenumber
-set lazyredraw
+set backspace=2
+set history=200             " Store lots of :cmdline history
+set ruler                   " Show the cursor position always
+set showcmd                 " Show incomplete cmds down the bottom
+set ignorecase              " Ignore case in searches
+set smartcase               " Use case sensitive if captial letters are present
+set showmode                " Show current mode down the bottom
+set visualbell              " No sounds
+set autoread                " Reload files changed outside vim
+set noshowmode              " Airline shows status
+set ttyfast                 " Should make scrolling faster
+set lazyredraw              " Should make scrolling faster
 set wrap
 set clipboard=unnamedplus
 
@@ -43,7 +44,6 @@ set expandtab
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
-
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
@@ -57,8 +57,7 @@ set laststatus=2
 
 " ================ Folds ============================
 
-set foldmethod=syntax   "fold based on indent
-set foldcolumn=1
+set foldmethod=manual       " Set folds by syntax of current language
 let javaScript_fold=1
 set foldlevelstart=99
 
@@ -70,7 +69,6 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
-set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
 set wildignore+=log/**
@@ -86,7 +84,6 @@ set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
 set mouse=a " Enable scrolling with mouse
-
 
 " ================ Backups ========================
 set backupdir=~/.vim-tmp,~/.tmp,~./tmp,/var/tmp,/tmp

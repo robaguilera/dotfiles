@@ -7,7 +7,7 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=""
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -52,7 +52,8 @@ CASE_SENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export NVM_LAZY_LOAD=true
-plugins=(k git vi-mode history-substring-search fasd zsh-nvm)
+NVM_SYMLINK_CURRENT=true
+plugins=(git vi-mode history-substring-search fasd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,9 +86,9 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -f ~/dotfiles/.zshrc-plus ]] && source ~/dotfiles/.zshrc-plus
 [[ -f ~/.workAliases ]] && source ~/.workAliases
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 
-autoload -U promptinit; promptinit
-prompt pure
+#autoload -U promptinit; promptinit
+#prompt pure
 source /Users/robertaguilera/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# eval $(thefuck --alias)

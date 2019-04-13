@@ -1,5 +1,5 @@
 " Digging Fzf so much it's got it's own space
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --hidden --ignore-case --follow --glob "!.git/*,node_modules/,bower_components/" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --hidden --ignore-case --follow --exclude .git --ignore-file ~/.gitignore --color "always" '.shellescape(<q-args>), 1, <bang>0)
 " set fzf to theme
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
@@ -30,9 +30,14 @@ nnoremap q: :CmdHist<CR>
 command! QHist call fzf#vim#search_history({'right': '40'})
 nnoremap q/ :QHist<CR>
 
-command! -bang -nargs=* Ack call fzf#vim#ag(<q-args>, {'down': '40%'})
-
 " Custom FZF commands ----------------------------- {{{
+function! FZFOpen(command_str)
+  if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
+    exe "normal! \<c-w>\<c-w>"
+  endif
+  exe 'normal! ' . a:command_str . "\<cr>"
+endfunction
+
 fun! s:change_branch(e)
   let l:_ = system('git checkout ' . a:e)
   :e!
@@ -54,6 +59,7 @@ fun! s:change_remote_branch(e)
   :AirlineRefresh
   echom 'Changed to remote branch' . a:e
 endfun
+
 
 command! Grbranch call fzf#run(
       \ {
