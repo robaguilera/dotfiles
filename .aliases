@@ -70,7 +70,7 @@ alias nrw="npm run watch"
 alias yn="yarn"
 
 # VIM/NEOVIM
-alias neo="nvim"
+alias vim="nvim"
 
 # VSCODE
 # alias code="code-insiders ."
