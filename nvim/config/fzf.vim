@@ -1,5 +1,5 @@
 " Digging Fzf so much it's got it's own space
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --hidden --ignore-case --follow --exclude .git --ignore-file ~/.gitignore --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --files --follow --hidden --glob "!.git/*,!node_modules/*,!bower_components/*, !tmp/* '.shellescape(<q-args>), 1, <bang>0)
 " set fzf to theme
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
