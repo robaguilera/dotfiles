@@ -88,7 +88,5 @@ source $ZSH/oh-my-zsh.sh
 [[ -f ~/.workAliases ]] && source ~/.workAliases
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 
-#autoload -U promptinit; promptinit
-#prompt pure
 source /Users/robertaguilera/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

@@ -1,14 +1,16 @@
-filetype plugin indent on
-syntax enable
-syntax on
-set encoding=utf-8
+" General Settings {{{
+  filetype plugin indent on " try to recognize filetypes and load rel' plugins
+  set nocompatible          " vim, no vi
+  scriptencoding utf-16     " allow emojis in vimrc
+  syntax on                 " syntax highlighting
+  set termguicolors         " enable true colors
+"}}}
 
 " Aesthetics
 set background=dark
 colorscheme palenight 
 let g:airline_theme='dracula'
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
 
 hi CursorLineNR guifg=tomato
 autocmd BufRead,BufNewFile *.md setlocal spell complete+=kspell

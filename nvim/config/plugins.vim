@@ -1,12 +1,26 @@
-call plug#begin('~/.local/share/nvim/plugged')
-  " Start plugin installs
+call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
 
   " Global Plugins
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
+  Plug 'fszymanski/deoplete-emoji'
+  Plug 'Yggdroot/indentLine'
+  Plug 'mhinz/vim-startify'
+  " Auto close matching pairs {} \"\", etc..
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'junegunn/vim-easy-align'
+  Plug 'SirVer/ultisnips'
 
   " Movement
   Plug 'epilande/vim-es2015-snippets'
@@ -40,6 +54,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Javascript Plugins
   " JavaScript support (required by vim-jsx)
   Plug 'pangloss/vim-javascript'
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
   " React:
     " JSX support for react components
@@ -88,6 +103,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'ryanoasis/vim-devicons'
 
+  " Language Servers
+  Plug 'vscode-langservers/vscode-css-languageserver-bin'
+
   " ?? What do these do?? "
   " Plug 'Yggdroot/indentLine', { 'on' : 'IndentLinesEnable'}
   " autocmd! User indentline doautocmd indentLine Syntax
@@ -97,7 +115,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Plug 'terryma/vim-expand-region'
   " Plug 'adelarsq/vim-matchit'
   " Plug 'tpope/vim-sleuth'
-  " Plug 'SirVer/ultisnips'
 
 
 call plug#end()
