@@ -97,6 +97,7 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
   " Style
   Plug 'vim-airline/vim-airline-themes'
   Plug 'junegunn/limelight.vim'
+  Plug 'arcticicestudio/nord-vim'
   Plug 'dracula/vim'
   Plug 'drewtempelmeyer/palenight.vim'
   Plug 'kristijanhusak/vim-carbon-now-sh'

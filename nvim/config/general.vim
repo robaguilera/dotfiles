@@ -8,7 +8,7 @@
 
 " Aesthetics
 set background=dark
-colorscheme palenight 
+colorscheme nord 
 let g:airline_theme='dracula'
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
