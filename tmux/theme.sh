@@ -12,7 +12,7 @@ tm_separator_left_thin="❮"
 tm_separator_right_bold="▶"
 tm_separator_right_thin="❯"
 
-set -g status-left-length 32
+set -g status-left-length 30
 set -g status-right-length 150
 set -g status-interval 5
 

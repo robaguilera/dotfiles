@@ -103,6 +103,8 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
   Plug 'kristijanhusak/vim-carbon-now-sh'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'arcticicestudio/nord-vim'
+
 
   " Language Servers
   Plug 'vscode-langservers/vscode-css-languageserver-bin'
