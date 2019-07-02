@@ -57,7 +57,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " ====================================
 " ALE:
 " ====================================
-let b:ale_fixers = ['prettier', 'eslint']
+" let b:ale_fixers = ['prettier', 'eslint']
 
 " ====================================
 " Deoplete:

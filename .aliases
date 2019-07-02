@@ -71,6 +71,8 @@ alias vim="nvim"
 
 # VSCODE
 alias code="code-insiders ."
+alias wk="code-insiders ."
+alias yn="yarn start"
 
 # TMUX
 alias tm='$HOME/dotfiles/bin/tm'

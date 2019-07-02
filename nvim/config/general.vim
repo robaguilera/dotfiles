@@ -93,5 +93,5 @@ set backupdir=~/.vim-tmp,~/.tmp,~./tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~./tmp,/var/tmp,/tmp
 
 " ================ Syntax ========================
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
