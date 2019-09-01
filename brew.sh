@@ -40,5 +40,7 @@ brew install git-lfs
 
 # Media Tools
 brew cask install vlc
+
+brew install tree
 # Remove outdated versions from the cellar.
 brew cleanup

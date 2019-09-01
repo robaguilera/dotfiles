@@ -1,5 +1,7 @@
 # Setting rg as the default source for fzf
-export FZF_DEFAULT_COMMAND='rg --files --follow --hidden --glob "!.git/*,!node_modules/*,!bower_components/*, !tmp/*"'
+# export FZF_DEFAULT_COMMAND='rg --files --follow --hidden --glob "!.git/*,!node_modules/*,!bower_components/*, !tmp/*"'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 
 if $(command -v fzf >/dev/null); then
@@ -7,20 +9,20 @@ if $(command -v fzf >/dev/null); then
   # cd to selected directory
   fcd() {
     local dir
-      dir=$(fd | fzf +m) &&
+      dir=$(fzf +m) &&
       cd "$dir"
   }
 
   # including hidden directories
   fchd() {
     local dir
-      dir=$(fd --hidden -E .git | fzf +m) && cd "$dir"
+      dir=$(fzf +m) && cd "$dir"
   }
 
   # open in vscode to selected directory
   fcode() {
     local dir
-      dir=$(fd --hidden | fzf +m) &&
+      dir=$(fzf +m) &&
       code "$dir"
   }
 
@@ -141,12 +143,5 @@ if $(command -v fzf >/dev/null); then
             git stash show -p $sha
               fi
               done
-  }
-
-  # using ripgrep combined with preview
-  # find-in-file - usage: fif <searchTerm>
-  fif() {
-    if [ ! "$#" -gte 1 ]; then echo "Need a string to search for!"; return 1; fi
-    rg --files-with-matches --no-messages $1 | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}"
   }
 fi
