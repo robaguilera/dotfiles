@@ -16,6 +16,7 @@ hi CursorLineNR guifg=tomato
 autocmd BufRead,BufNewFile *.md setlocal spell complete+=kspell
 hi SpellBad guibg=#ff2929 guifg=#f9f9f9" ctermbg=224
 au BufRead,BufNewFile *.md setlocal textwidth=80
+set complete+=kspell
 
 " General Config
 set number                  " Line numbers are good
