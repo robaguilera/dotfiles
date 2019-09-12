@@ -18,7 +18,13 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
   " Movement
   " Plug 'epilande/vim-es2015-snippets'
   " Plug 'epilande/vim-react-snippets'
+  
+  " Markdown
+  Plug 'godlygeek/tabular'
+	Plug 'plasticboy/vim-markdown'
+  Plug 'reedes/vim-pencil'
 
+  "
   " Neovim: {{{
   if has('nvim')
     " abstraction on top of neovim terminal

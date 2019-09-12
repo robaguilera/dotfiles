@@ -1,7 +1,15 @@
 " ====================================
+" Markdown
+" ====================================
+augroup pencil
+	autocmd!
+	autocmd FileType markdown,mkd,mdx call pencil#init({'wrap': 'soft'})
+	autocmd FileType text         call pencil#init()
+augroup END
+
+" ====================================
 " Language Servers:
 " ====================================
-
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 

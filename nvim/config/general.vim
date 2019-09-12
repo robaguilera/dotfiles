@@ -13,9 +13,8 @@ let g:airline_theme='dracula'
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 hi CursorLineNR guifg=tomato
-autocmd BufRead,BufNewFile *.md setlocal spell complete+=kspell
+autocmd BufRead,BufNewFile *.md setlocal spell
 hi SpellBad guibg=#ff2929 guifg=#f9f9f9" ctermbg=224
-au BufRead,BufNewFile *.md setlocal textwidth=80
 set complete+=kspell
 
 " General Config
@@ -33,12 +32,10 @@ set autoread                " Reload files changed outside vim
 set noshowmode              " Airline shows status
 set ttyfast                 " Should make scrolling faster
 set lazyredraw              " Should make scrolling faster
-set wrap
 set clipboard=unnamedplus
 
 " ================ Indentation ======================
 
-set autoindent
 set smarttab
 set shiftwidth=2
 set softtabstop=2
@@ -48,11 +45,9 @@ set expandtab
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
+
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
-
-set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
 
 " ============== Misc ===============================
 " block select not limited by shortest line

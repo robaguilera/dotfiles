@@ -92,4 +92,5 @@ source $ZSH/oh-my-zsh.sh
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 
 source /Users/robertaguilera/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(rbenv init -)"
 
