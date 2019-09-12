@@ -1,0 +1,14 @@
+# /Users/robertaguilera/.tmuxinator/bc.yml
+
+name: bc
+root: ~/WebMocha
+
+on_project_start: cd brand-central-cms && code .
+
+windows:
+  - brand-central:
+      layout: tiled
+      panes:
+        - cd brand-central-cms && npm run api-dev
+        - cd brand-central-cms && npm run dev
+        - cd grommet-passport && npm run dev-server
