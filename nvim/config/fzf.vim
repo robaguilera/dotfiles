@@ -1,3 +1,7 @@
+let $FZF_DEFAULT_COMMAND =  'rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,bower_components,tmp,dist}/*"  2> /dev/null'
+" let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse  --margin=1,4'
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
 " Digging Fzf so much it's got it's own space
 command! -bang -nargs=* Find call fzf#vim#grep('rg --files --follow --hidden --glob "!.git/*,!node_modules/*,!bower_components/*, !tmp/* '.shellescape(<q-args>), 1, <bang>0)
 " set fzf to theme
@@ -29,6 +33,27 @@ nnoremap q: :CmdHist<CR>
 " Better search history
 command! QHist call fzf#vim#search_history({'right': '40'})
 nnoremap q/ :QHist<CR>
+
+function! FloatingFZF()
+  let buf = nvim_create_buf(v:false, v:true)
+  call setbufvar(buf, '&signcolumn', 'no')
+
+  let height = float2nr(100)
+  let width = float2nr(100)
+  let horizontal = float2nr((&columns - width) / 2)
+  let vertical = 1
+
+  let opts =  {
+        \ 'relative': 'editor',
+        \ 'row': vertical,
+        \ 'col': horizontal,
+        \ 'width': width,
+        \ 'height': height,
+        \ 'style': 'minimal'
+        \ }
+
+  call nvim_open_win(buf, v:true, opts)
+endfunction
 
 " Custom FZF commands ----------------------------- {{{
 function! FZFOpen(command_str)
