@@ -4,9 +4,11 @@ let mapleader = ','
 " ----------------------------------------------------------------------------
 " Normal Mode "
 " ----------------------------------------------------------------------------
-nmap <leader>w :w!<cr>
+nmap <leader>w :w<cr>
+nmap <leader>W :wq<cr>
 nmap <leader>q :q<cr>
 nmap <leader>src :source %<cr>
+nnoremap <leader>no :noh<CR>
 
 " ----------------------------------------------------------------------------
 " Navigate between display lines
@@ -25,18 +27,15 @@ nnoremap <silent> <C-k> :move-2<cr>
 nnoremap <silent> <C-j> :move+<cr>
 xnoremap <silent> <C-k> :move-2<cr>gv
 xnoremap <silent> <C-j> :move'>+<cr>gv
-xnoremap <silent> <C-h> <gv
-xnoremap <silent> <C-l> >gv
-xnoremap < <gv
-xnoremap > >gv
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " ----------------------------------------------------------------------------
-" Visual Mode "
+" Commenting Out
 " ----------------------------------------------------------------------------
-" Align blocks of text and keep them selected
-vmap < <gv
-vmap > >gv
-vnoremap <C-c> "*y<CR>
 vnoremap <leader>/ :TComment<cr> 
 
 " ----------------------------------------------------------------------------
@@ -51,7 +50,6 @@ imap jj <esc>
 " split window management
 nnoremap <leader>h :split<CR>
 nnoremap <leader>j :vsplit<CR>
-nnoremap <leader>no :noh<CR>
 
 " folding code
 nnoremap <space> za
