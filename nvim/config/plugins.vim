@@ -7,31 +7,13 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'fszymanski/deoplete-emoji'
   Plug 'Yggdroot/indentLine'
-  Plug 'mhinz/vim-startify'
-  " Auto close matching pairs {} \"\", etc..
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'junegunn/vim-easy-align'
+
   Plug 'SirVer/ultisnips'
 
-  " Movement
-  " Plug 'epilande/vim-es2015-snippets'
-  " Plug 'epilande/vim-react-snippets'
   
-  " Markdown
-  Plug 'godlygeek/tabular'
-	Plug 'plasticboy/vim-markdown'
-  Plug 'reedes/vim-pencil'
-
-  "
   " Neovim: {{{
   if has('nvim')
-    " abstraction on top of neovim terminal
-    Plug 'kassio/neoterm'
-
-    " run tests at the speed of thought
-    Plug 'janko-m/vim-test'
 
     " Highlight Yanked String
     Plug 'machakann/vim-highlightedyank'
@@ -47,8 +29,8 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
   " Text Manipulation
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
-  Plug 'tomtom/tcomment_vim'
   Plug 'junegunn/goyo.vim'
+  Plug 'jiangmiao/auto-pairs'
 
   " Javascript Plugins
   " JavaScript support (required by vim-jsx)
@@ -78,12 +60,11 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
 
   " Formatting
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-  Plug 'w0rp/ale'
 
   " Git
   Plug 'vim-airline/vim-airline'
-  Plug 'tpope/vim-fugitive'
-  Plug 'junegunn/gv.vim'
+  " Plug 'tpope/vim-fugitive'
+  " Plug 'junegunn/gv.vim'
   Plug 'airblade/vim-gitgutter'
 
   " CSS
@@ -100,10 +81,9 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
   Plug 'dracula/vim'
   Plug 'drewtempelmeyer/palenight.vim'
   Plug 'kristijanhusak/vim-carbon-now-sh'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'ryanoasis/vim-devicons'
   Plug 'arcticicestudio/nord-vim'
-  Plug 'junegunn/goyo.vim'
+  Plug 'sjl/badwolf'
 
   " Language Servers
   " Plug 'vscode-langservers/vscode-css-languageserver-bin'
