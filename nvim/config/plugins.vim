@@ -63,7 +63,7 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
 
   " Git
   Plug 'vim-airline/vim-airline'
-  " Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-fugitive'
   " Plug 'junegunn/gv.vim'
   Plug 'airblade/vim-gitgutter'
 
