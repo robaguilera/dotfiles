@@ -1,9 +1,10 @@
-let $FZF_DEFAULT_COMMAND =  'rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,bower_components,tmp,dist}/*"  2> /dev/null'
-" let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse  --margin=1,4'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse  --margin=1,4'
 let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
 " Digging Fzf so much it's got it's own space
-command! -bang -nargs=* Find call fzf#vim#grep('rg --files --follow --hidden --glob "!.git/*,!node_modules/*,!bower_components/*, !tmp/* '.shellescape(<q-args>), 1, <bang>0)
+" command! -bang -nargs=* Find call fzf#vim#grep('rg --files --follow --hidden --glob "!.git/*,!node_modules/*,!bower_components/*, !tmp/* '.shellescape(<q-args>), 1, <bang>0)
+
 " set fzf to theme
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
@@ -38,8 +39,8 @@ function! FloatingFZF()
   let buf = nvim_create_buf(v:false, v:true)
   call setbufvar(buf, '&signcolumn', 'no')
 
-  let height = float2nr(100)
-  let width = float2nr(100)
+  let height = float2nr(150)
+  let width = float2nr(150)
   let horizontal = float2nr((&columns - width) / 2)
   let vertical = 1
 

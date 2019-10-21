@@ -12,6 +12,8 @@ if has('nvim')
     \ }
 
   let g:LanguageClient_hasSnippetSupport = 0
+  let s:float_term_border_win = 0
+  let s:float_term_win = 0
 
   nnoremap <leader>; :call LanguageClient_contextMenu()<CR>
 

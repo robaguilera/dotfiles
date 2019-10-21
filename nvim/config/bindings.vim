@@ -69,7 +69,7 @@ nnoremap <leader>ll :Limelight!!<cr>
 " FZF
 " ----------------------------------------------------------------------------
 nnoremap <c-p> :call FZFOpen(':Files')<CR>
-nnoremap <c-f> :call FZFOpen(':Find')<cr>
+nnoremap <c-f> :call FZFOpen(':Rg')<cr>
 nnoremap <c-b> :call FZFOpen(':Buffers')<cr>
 nnoremap <c-y> :call FZFOpen(':History')<cr>
 nnoremap <c-s> :call FZFOpen(':Snippets')<cr>
