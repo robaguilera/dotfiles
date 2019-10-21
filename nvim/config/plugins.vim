@@ -31,6 +31,8 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
   Plug 'tpope/vim-repeat'
   Plug 'junegunn/goyo.vim'
   Plug 'jiangmiao/auto-pairs'
+  Plug 'wellle/targets.vim'
+
 
   " Javascript Plugins
   " JavaScript support (required by vim-jsx)
@@ -64,8 +66,8 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
   " Git
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
-  " Plug 'junegunn/gv.vim'
   Plug 'airblade/vim-gitgutter'
+  Plug 'jreybert/vimagit'
 
   " CSS
   " Plug 'ap/vim-css-color'
