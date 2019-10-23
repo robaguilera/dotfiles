@@ -6,7 +6,7 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'Yggdroot/indentLine'
 
   Plug 'SirVer/ultisnips'
@@ -14,15 +14,8 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
   
   " Neovim: {{{
   if has('nvim')
-
     " Highlight Yanked String
     Plug 'machakann/vim-highlightedyank'
-
-    " Language Server Protocol (LSP) support for vim and neovim
-    Plug 'autozimu/LanguageClient-neovim', {
-          \ 'branch': 'next',
-          \ 'do': 'bash install.sh',
-          \ }
   endif
   " }}}
 
@@ -36,6 +29,7 @@ call plug#begin('~/.local/share/nvim/plugged') " Start plugin installs
 
   " Javascript Plugins
   " JavaScript support (required by vim-jsx)
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " Plug 'pangloss/vim-javascript'
   " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 

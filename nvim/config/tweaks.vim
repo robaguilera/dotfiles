@@ -26,24 +26,6 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Deoplete
-"
-let g:deoplete#enable_at_startup = 1
-inoremap <silent><expr> <TAB>
-         \ pumvisible() ? "\<C-n>" :
-         \ <SID>check_back_space() ? "\<TAB>" :
-         \ deoplete#mappings#manual_complete()
-
-function! s:check_back_space() abort
-  let l:col = col('.') - 1
-  return !l:col || getline('.')[l:col - 1]  =~? '\s'
-endfunction
-
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.css               = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-let g:deoplete#omni#input_patterns.scss              = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-let g:deoplete#omni#input_patterns['javascript.jsx'] = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-
 " Git Gutter
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '>'
