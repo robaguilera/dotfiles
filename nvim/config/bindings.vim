@@ -1,9 +1,8 @@
-" ===== Custom Settings ====
+" ===== Custom Settings ==== "
 
 let mapleader = ','
 
 " Normal Mode
-
 nmap <leader>w :w<cr>
 nmap <leader>W :wq<cr>
 nmap <leader>q :q<cr>
@@ -11,7 +10,6 @@ nmap <leader>src :source %<cr>
 nnoremap <leader>no :noh<CR>
 
 " Navigate between display lines
-
 noremap  <silent> <Up>   gk
 noremap  <silent> <Down> gj
 noremap  <silent> k gk
@@ -20,7 +18,6 @@ noremap  <silent> <Home> g<Home>
 noremap  <silent> <End>  g<End>
 
 " Moving lines
-
 nnoremap <silent> <C-k> :move-2<cr>
 nnoremap <silent> <C-j> :move+<cr>
 xnoremap <silent> <C-k> :move-2<cr>gv
@@ -32,18 +29,22 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
 " Commenting Out
-
 vnoremap <leader>/ :TComment<cr> 
 
 " Remap
-
 noremap ;; :
 imap jj <esc>
 
 " split window management
+nnoremap <leader>j :split<CR>
+nnoremap <leader>l :vsplit<CR>
 
-nnoremap <leader>h :split<CR>
-nnoremap <leader>j :vsplit<CR>
+" Cycle tabs with Tab and Shift+Tab
+" TODO
+" I like tab to indent lines, find a better binding
+
+" nnoremap<silent> <Tab> :bnext<CR>
+" nnoremap<silent> <S-Tab> :bprevious<CR>
 
 " folding code
 
