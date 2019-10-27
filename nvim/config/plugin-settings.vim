@@ -79,11 +79,9 @@ noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-50)<CR>
 let g:comfortable_motion_friction = 80.0
 let g:comfortable_motion_air_drag = 2
 
-"""""""
-"COC  "
-"""""""
+" COC
 
-" Define Error Symbols and colors
+"Define Error Symbols and colors
 let g:coc_status_warning_sign = ''
 let g:coc_status_error_sign = ''
 hi CocWarningSign ctermfg=blue 
@@ -120,9 +118,6 @@ let g:coc_global_extensions = [
       \'coc-tsserver',
       \'coc-json',
       \'coc-python',
-      \'coc-git',
-      \'coc-github',
-      \'coc-gitignore',
       \'coc-emoji',
       \'coc-stylelint',
       \'coc-utils'
