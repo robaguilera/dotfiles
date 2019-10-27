@@ -80,7 +80,6 @@ let g:comfortable_motion_friction = 80.0
 let g:comfortable_motion_air_drag = 2
 
 " COC
-
 "Define Error Symbols and colors
 let g:coc_status_warning_sign = ''
 let g:coc_status_error_sign = ''
@@ -109,9 +108,7 @@ let g:coc_snippet_prev = '<S-TAB>'
 " coc-eslint needs eslint npm package installed globally
 let g:coc_global_extensions = [
       \'coc-html', 
-      \'coc-vimlsp', 
       \'coc-css', 
-      \'coc-snippets',
       \'coc-prettier',
       \'coc-eslint',
       \'coc-emmet',
@@ -119,9 +116,9 @@ let g:coc_global_extensions = [
       \'coc-json',
       \'coc-python',
       \'coc-emoji',
-      \'coc-stylelint',
-      \'coc-utils'
+      \'coc-stylelint'
       \]
+let g:coc_user_config = '~/dotfiles/nvim'
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -139,18 +136,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-augroup MyAutoCmd
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" map <tab> to trigger completion and navigate to the next item
+"  map <tab> to trigger completion and navigate to the next item
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :

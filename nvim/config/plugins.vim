@@ -65,9 +65,6 @@ Plug 'wellle/targets.vim'
 " COC - Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
- " Smart completion (to work with CoC)
-Plug 'zxqfl/tabnine-vim'
-
 " Formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
@@ -108,8 +105,6 @@ Plug 'yuttie/comfortable-motion.vim'
  " HTML
  " Plug 'mattn/emmet-vim'
 
- " Language Servers
- " Plug 'vscode-langservers/vscode-css-languageserver-bin'
 
  " ?? What do these do?? "
  " Plug 'Yggdroot/indentLine', { 'on' : 'IndentLinesEnable'}
