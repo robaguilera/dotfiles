@@ -3,3 +3,6 @@ for file in ~/dotfiles/.{path,theme,aliases,gitAliases,exports,functions,fzfLove
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+HISTSIZE=3000
+SAVEHIST=3000

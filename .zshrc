@@ -22,8 +22,6 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-export NVM_LAZY_LOAD=true
-NVM_SYMLINK_CURRENT=true
 plugins=(git vi-mode history-substring-search fasd)
 
 source $ZSH/oh-my-zsh.sh
@@ -32,7 +30,13 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -f ~/dotfiles/.zshrc-plus ]] && source ~/dotfiles/.zshrc-plus
 [[ -f ~/.workAliases ]] && source ~/.workAliases
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
+
+# Load NVM when needed - speeds up inital load time of ZSH
+# https://github.com/nvm-sh/nvm/issues/539#issuecomment-245791291
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
 source /Users/robertaguilera/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(rbenv init -)"
