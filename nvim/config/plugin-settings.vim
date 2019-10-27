@@ -111,6 +111,7 @@ let g:coc_global_extensions = [
       \'coc-css', 
       \'coc-prettier',
       \'coc-eslint',
+      \'coc-ember',
       \'coc-emmet',
       \'coc-tsserver',
       \'coc-json',
@@ -118,7 +119,6 @@ let g:coc_global_extensions = [
       \'coc-emoji',
       \'coc-stylelint'
       \]
-let g:coc_user_config = '~/dotfiles/nvim'
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
