@@ -59,6 +59,7 @@ endif
  " Text Manipulation
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
 
@@ -71,15 +72,15 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Physics based scrolling
 Plug 'yuttie/comfortable-motion.vim'
 
+" JavaScript support (required by vim-jsx)
+Plug 'pangloss/vim-javascript'
 
- " Javascript Plugins
- " JavaScript support (required by vim-jsx)
- " Plug 'pangloss/vim-javascript'
- " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" JSX support for react components
+Plug 'mxw/vim-jsx'
 
- " React:
-   " JSX support for react components
-   " Plug 'mxw/vim-jsx'
+" Emmet:
+Plug 'mattn/emmet-vim'
+
    "
    " " A Vim plugin that provides functions that modify React source files 
    " Plug 'mvolkmann/vim-react', { 'for': 'javascript.jsx' }
@@ -94,16 +95,6 @@ Plug 'yuttie/comfortable-motion.vim'
  " syntax highlighting for styled components
  " Plug 'styled-components/vim-styled-components', { 'branch': 'main', 'for': 'javascript.jsx' }
 
- " Ember
- " Plug 'AndrewRadev/ember_tools.vim'
- " Plug 'mustache/vim-mustache-handlebars'
-
- " CSS
- " Plug 'ap/vim-css-color'
- " Plug 'hail2u/vim-css3-syntax'
-
- " HTML
- " Plug 'mattn/emmet-vim'
 
 
  " ?? What do these do?? "

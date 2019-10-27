@@ -6,6 +6,7 @@ let mapleader = ','
 nmap <leader>w :w<cr>
 nmap <leader>W :wq<cr>
 nmap <leader>q :q<cr>
+nmap <leader>Q :q!<cr>
 nmap <leader>src :source %<cr>
 nnoremap <leader>no :noh<CR>
 
