@@ -37,6 +37,7 @@ alias nrs="npm run start"
 alias nrd="npm run dev"
 alias nrw="npm run watch"
 alias yn="yarn start"
+alias gat="gatsby develop"
 
 # VIM/NEOVIM
 alias vim="nvim"
