@@ -55,7 +55,14 @@ set updatetime=250
 " Goyo
 nmap <F6> :Goyo<CR>
 
-" Devicons
+
+" Airline
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Devicons:
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_unite = 1
 let g:webdevicons_enable_denite = 1

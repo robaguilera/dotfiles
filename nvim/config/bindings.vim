@@ -39,13 +39,19 @@ imap jj <esc>
 " split window management
 nnoremap <leader>j :split<CR>
 nnoremap <leader>l :vsplit<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" buffers
+nnoremap <leader>t :bnext<CR>
+nnoremap <leader>tt :bprevious<CR>
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nnoremap <leader>bq :bp <BAR> bd #<CR>
 
 " Cycle tabs with Tab and Shift+Tab
 " TODO
 " I like tab to indent lines, find a better binding
-
-" nnoremap<silent> <Tab> :bnext<CR>
-" nnoremap<silent> <S-Tab> :bprevious<CR>
 
 " folding code
 
