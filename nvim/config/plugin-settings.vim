@@ -171,3 +171,12 @@ let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitelines_at_eof=1
 let g:strip_whitespace_confirm=0
+
+" Easy Motion
+map <leader><leader>f <Plug>(easymotion-overwin-f)
+" s{char}{char} to move to {char}{char}
+map <leader><leader>c <Plug>(easymotion-overwin-f2)
+" Move to line
+map <leader><leader>l <Plug>(easymotion-bd-jk)
+" Move to word
+map  <leader><Leader>w <Plug>(easymotion-bd-w)

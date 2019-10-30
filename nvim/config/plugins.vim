@@ -6,7 +6,7 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 " Start plugin installs
-call plug#begin('~/.local/share/nvim/plugged') 
+call plug#begin('~/.local/share/nvim/plugged')
 
 " Nerdtree:
 Plug 'scrooloose/nerdtree'
@@ -84,9 +84,11 @@ Plug 'mattn/emmet-vim'
 " Vim Better Whitespace
 Plug 'ntpeters/vim-better-whitespace'
 
+" Improved motion in Vim
+Plug 'easymotion/vim-easymotion'
 
    "
-   " " A Vim plugin that provides functions that modify React source files 
+   " " A Vim plugin that provides functions that modify React source files
    " Plug 'mvolkmann/vim-react', { 'for': 'javascript.jsx' }
    "
    " " extract partial render, rename tag, select self close tags

@@ -30,7 +30,7 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
 " Commenting Out
-vnoremap <leader>/ :TComment<cr> 
+vnoremap <leader>/ :TComment<cr>
 
 " Remap
 noremap ;; :
