@@ -8,40 +8,40 @@ endif
 " Start plugin installs
 call plug#begin('~/.local/share/nvim/plugged') 
 
-" Nerdtree
+" Nerdtree:
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-" FZF
+" FZF:
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Indent Guides
+" Indent Guides:
 Plug 'Yggdroot/indentLine'
 
-" Code Snippets Engine
+" Code Snippets Engine:
 Plug 'SirVer/ultisnips'
 
-" Status bar
+" Status bar:
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Git
+" Git:
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rhubarb'
 
- " Distraction Free
+ " Distraction Free:
 Plug 'junegunn/goyo.vim'
 
-" Focus Mode 
+" Focus Mode:
 Plug 'junegunn/limelight.vim'
 
-" Screenshotting Code
+" Screenshotting Code:
 Plug 'kristijanhusak/vim-carbon-now-sh'
 
-" Styling Vim
+" Styling Vim:
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim'
 Plug 'drewtempelmeyer/palenight.vim'
@@ -56,30 +56,34 @@ if has('nvim')
 endif
 " }}}
 
- " Text Manipulation
+ " Text Manipulation:
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
 
-" COC - Autocompletion
+" COC - Autocompletion:
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Formatting
+" Formatting:
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-" Physics based scrolling
+" Physics based scrolling:
 Plug 'yuttie/comfortable-motion.vim'
 
-" JavaScript support (required by vim-jsx)
+" JavaScript support (required by vim-jsx):
 Plug 'pangloss/vim-javascript'
 
-" JSX support for react components
-Plug 'mxw/vim-jsx'
+" JSX support for react components:
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 " Emmet:
 Plug 'mattn/emmet-vim'
+
+" Vim Better Whitespace
+Plug 'ntpeters/vim-better-whitespace'
+
 
    "
    " " A Vim plugin that provides functions that modify React source files 

@@ -90,7 +90,7 @@ let g:comfortable_motion_air_drag = 2
 "Define Error Symbols and colors
 let g:coc_status_warning_sign = ''
 let g:coc_status_error_sign = ''
-hi CocWarningSign ctermfg=blue 
+hi CocWarningSign ctermfg=blue
 hi CocErrorSign ctermfg=red
 hi CocInfoSign ctermfg=yellow
 hi CocHintSign ctermfg=green
@@ -109,13 +109,13 @@ let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
 
-" Extensions. Some need configuration. 
+" Extensions. Some need configuration.
 " coc-java needs a valid JVM filepath defined in coc-settings
 " coc-ccls needs ccls (available on aur)
 " coc-eslint needs eslint npm package installed globally
 let g:coc_global_extensions = [
-      \'coc-html', 
-      \'coc-css', 
+      \'coc-html',
+      \'coc-css',
       \'coc-prettier',
       \'coc-eslint',
       \'coc-ember',
@@ -162,3 +162,12 @@ let g:user_emmet_settings = {
     \      'extends' : 'jsx',
     \  },
   \}
+
+" vim jsx pretty:
+let g:vim_jsx_pretty_colorful_config = 1
+
+" better whitespace:
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+let g:strip_whitelines_at_eof=1
+let g:strip_whitespace_confirm=0
