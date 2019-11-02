@@ -1,107 +1,107 @@
-# set -g default-command "login-shell"
-# 
-# # tmux display things in 256 colors
-# set -g default-terminal "tmux-256color-italic"
-# 
-# #  enable terminal compability
-# set-option -ga terminal-overrides ",tmux-256color-italic:Tc"
+## set -g default-command "login-shell"
+## 
+## # tmux display things in 256 colors
+## set -g default-terminal "tmux-256color-italic"
+## 
+## #  enable terminal compability
+## set-option -ga terminal-overrides ",tmux-256color-italic:Tc"
 
-set -g history-limit 20000
+#set -g history-limit 20000
 
-# automatically renumber tmux windows
-set -g renumber-windows on
+## automatically renumber tmux windows
+#set -g renumber-windows on
 
-# unbind default prefix and set it to Ctrl+a
-unbind C-b
-set -g prefix C-a
-bind C-a send-prefix
+## unbind default prefix and set it to Ctrl+a
+#unbind C-b
+#set -g prefix C-a
+#bind C-a send-prefix
 
-# for nested tmux sessions
-bind-key a send-prefix
+## for nested tmux sessions
+#bind-key a send-prefix
 
-# Activity Monitoring
-setw -g monitor-activity off
-set -g visual-activity off
+## Activity Monitoring
+#setw -g monitor-activity off
+#set -g visual-activity off
 
-# Rather than constraining window size to the maximum size of any client
-# connected to the *session*, constrain window size to the maximum size of any
-# client connected to *that window*. Much more reasonable.
-setw -g aggressive-resize on
+## Rather than constraining window size to the maximum size of any client
+## connected to the *session*, constrain window size to the maximum size of any
+## client connected to *that window*. Much more reasonable.
+#setw -g aggressive-resize on
 
-# make delay shorter
-set -sg escape-time 0
+## make delay shorter
+#set -sg escape-time 0
 
-# tile all windows
-unbind =
-bind = select-layout tiled
+## tile all windows
+#unbind =
+#bind = select-layout tiled
 
-# cycle through panes
-# unbind C-a
-# unbind o # this is the default key for cycling panes
-# bind ^A select-pane -t:.+
+## cycle through panes
+## unbind C-a
+## unbind o # this is the default key for cycling panes
+## bind ^A select-pane -t:.+
 
-# make window/pane index start with 1
-set -g base-index 1
-setw -g pane-base-index 1
+## make window/pane index start with 1
+#set -g base-index 1
+#setw -g pane-base-index 1
 
-set-option -g set-titles on
-set-option -g set-titles-string "#T - #W"
-# set-window-option -g automatic-rename on
+#set-option -g set-titles on
+#set-option -g set-titles-string "#T - #W"
+## set-window-option -g automatic-rename on
 
-######################
-#### Key Bindings ####
-######################
+#######################
+##### Key Bindings ####
+#######################
 
-# reload config file
-bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
+## reload config file
+#bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
 
-# quickly open a new window
-bind N new-window
+## quickly open a new window
+#bind N new-window
 
-# split window and fix path for tmux 1.9
-bind | split-window -h -c "#{pane_current_path}"
-bind - split-window -v -c "#{pane_current_path}"
+## split window and fix path for tmux 1.9
+#bind | split-window -h -c "#{pane_current_path}"
+#bind - split-window -v -c "#{pane_current_path}"
 
-# synchronize all panes in a window
-bind y setw synchronize-panes
+## synchronize all panes in a window
+#bind y setw synchronize-panes
 
-# pane movement shortcuts
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
+## pane movement shortcuts
+#bind h select-pane -L
+#bind j select-pane -D
+#bind k select-pane -U
+#bind l select-pane -R
 
-bind -r C-h select-window -t :-
-bind -r C-l select-window -t :+
+#bind -r C-h select-window -t :-
+#bind -r C-l select-window -t :+
 
-# Resize pane shortcuts
-bind -r H resize-pane -L 10
-bind -r J resize-pane -D 10
-bind -r K resize-pane -U 10
-bind -r L resize-pane -R 10
+## Resize pane shortcuts
+#bind -r H resize-pane -L 10
+#bind -r J resize-pane -D 10
+#bind -r K resize-pane -U 10
+#bind -r L resize-pane -R 10
 
-# enable mouse support for switching panes/windows
-setw -g mouse on
+## enable mouse support for switching panes/windows
+#setw -g mouse on
 
-##############################
-### Color & Style Settings ###
-##############################
+###############################
+#### Color & Style Settings ###
+###############################
 
-# Copy-paste integration
-set-option -g default-command "reattach-to-user-namespace -l zsh"
+## Copy-paste integration
+#set-option -g default-command "reattach-to-user-namespace -l zsh"
 
-# Use vim keybindings in copy mode
-setw -g mode-keys vi
+## Use vim keybindings in copy mode
+#setw -g mode-keys vi
 
-# Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy v begin-selection
-bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+## Setup 'v' to begin selection as in Vim
+#bind-key -t vi-copy v begin-selection
+#bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 
-# Update default binding of `Enter` to also use copy-pipe
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+## Update default binding of `Enter` to also use copy-pipe
+#unbind -t vi-copy Enter
+#bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 
-# Bind ']' to use pbpaste
-bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
+## Bind ']' to use pbpaste
+#bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
 
-source ~/.dotfiles/tmux/theme.sh
+#source ~/.dotfiles/tmux/theme.sh

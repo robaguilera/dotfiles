@@ -75,7 +75,7 @@ Plug 'yuttie/comfortable-motion.vim'
 " JavaScript support (required by vim-jsx):
 Plug 'pangloss/vim-javascript'
 
-" JSX support for react components:
+" JSX:
 Plug 'MaxMEllon/vim-jsx-pretty'
 
 " Emmet:
@@ -87,7 +87,9 @@ Plug 'ntpeters/vim-better-whitespace'
 " Improved motion in Vim
 Plug 'easymotion/vim-easymotion'
 
-   "
+" Ember:
+Plug 'joukevandermaas/vim-ember-hbs'
+
    " " A Vim plugin that provides functions that modify React source files
    " Plug 'mvolkmann/vim-react', { 'for': 'javascript.jsx' }
    "
@@ -100,8 +102,6 @@ Plug 'easymotion/vim-easymotion'
 
  " syntax highlighting for styled components
  " Plug 'styled-components/vim-styled-components', { 'branch': 'main', 'for': 'javascript.jsx' }
-
-
 
  " ?? What do these do?? "
  " Plug 'Yggdroot/indentLine', { 'on' : 'IndentLinesEnable'}

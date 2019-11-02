@@ -54,7 +54,6 @@ nnoremap <leader>bq :bp <BAR> bd #<CR>
 " I like tab to indent lines, find a better binding
 
 " folding code
-
 nnoremap <space> za
 
 " plugins

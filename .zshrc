@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.rbenv/bin:/opt/aplos/bin:/usr/local/sbin/bin:$PATH
+export PATH=$HOME/.config/yarn/global/node_modules/bin:.rbenv/bin:/opt/aplos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
