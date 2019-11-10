@@ -87,8 +87,13 @@ Plug 'ntpeters/vim-better-whitespace'
 " Improved motion in Vim
 Plug 'easymotion/vim-easymotion'
 
+" highlights template strings
+Plug 'Quramy/vim-js-pretty-template'
+
 " Ember:
 Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'sukima/vim-javascript-imports'
+Plug 'sukima/vim-ember-imports'
 
 " TPOPE:
 Plug 'tpope/vim-eunuch'

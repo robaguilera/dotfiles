@@ -16,7 +16,7 @@ let g:user_emmet_settings = {
 
 " Prettier
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier augroup END
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.html,*.hbs,*.less,*.scss,*.json,*.graphql Prettier augroup END
 
 " NERDTREE
 let NERDTreeShowHidden=1
@@ -106,8 +106,6 @@ hi! LineNr ctermfg=NONE guibg=NONE
 " KEY REMAPS ""
 set updatetime=300
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
-let g:coc_snippet_next = '<TAB>'
-let g:coc_snippet_prev = '<S-TAB>'
 
 " Extensions. Some need configuration.
 " coc-java needs a valid JVM filepath defined in coc-settings
@@ -135,10 +133,6 @@ nmap <silent> gr <Plug>(coc-references)
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
-
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
