@@ -90,7 +90,9 @@ Plug 'easymotion/vim-easymotion'
 " Ember:
 Plug 'joukevandermaas/vim-ember-hbs'
 
-   " " A Vim plugin that provides functions that modify React source files
+" TPOPE:
+Plug 'tpope/vim-eunuch'
+" " A Vim plugin that provides functions that modify React source files
    " Plug 'mvolkmann/vim-react', { 'for': 'javascript.jsx' }
    "
    " " extract partial render, rename tag, select self close tags

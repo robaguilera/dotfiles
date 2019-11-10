@@ -1,5 +1,4 @@
 " ================ General ======================
-
 augroup specify_filetype
   autocmd!
   autocmd BufRead,BufNewFile *.md set filetype=markdown
@@ -7,10 +6,10 @@ augroup specify_filetype
 augroup END
 
 " Longer leader key timeout
-set timeout timeoutlen=500  
+set timeout timeoutlen=500
 
 " try to recognize filetypes and load rel' plugins and indent.vim file
-filetype plugin indent on 
+filetype plugin indent on
 
 " allow emojis in vimrc
 scriptencoding utf-16
@@ -32,34 +31,37 @@ set backspace=2
 set history=200
 
 " Show the cursor position always
-set ruler      
+set ruler
 
 " Show incomplete cmds down the bottom
-set showcmd    
+set showcmd
 
 " Ignore case in searches
-set ignorecase 
+set ignorecase
 
 " Use case sensitive if captial letters are present
-set smartcase  
+set smartcase
 
 " Show current mode down the bottom
-set showmode   
+set showmode
 
 " No sounds
-set visualbell 
+set visualbell
 
 " Reload files changed outside vim
-set autoread   
+set autoread
 
 " Airline shows status
-set noshowmode 
+set noshowmode
 set clipboard^=unnamed,unnamedplus
 
 " Aesthetics
 set background=dark
-colorscheme nord
-let g:airline_theme='dracula'
+colorscheme badwolf
+let g:airline_theme='badwolf'
+
+" Switching files without causes file to hide, not close
+set hidden
 
 " Split window appears right the current one.
 set splitright
@@ -96,7 +98,6 @@ set foldlevelstart=99
 set wildmenu
 set wildmode=longest:full,full
 
-"
 "Start scrolling when we're 8 lines away from margins
 set scrolloff=8
 set sidescrolloff=15
