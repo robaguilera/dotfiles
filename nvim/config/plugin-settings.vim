@@ -64,6 +64,15 @@ nmap <F6> :Goyo<CR>
 " Lightline
 let g:lightline = {
       \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [[ 'filetype' ]]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'fileformat': '',
+      \ },
       \ }
 
 " Devicons:
