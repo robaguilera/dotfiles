@@ -2,7 +2,7 @@
 
 let g:LanguageClient_autoStart = 1 " Automatically start language servers
 
-" Emmett
+" Emmett:
 
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")  " Make emmet easier to invoke
 let g:user_emmet_leader_key=',' " ,, triggers autocomplete
@@ -11,7 +11,7 @@ let g:user_emmet_settings = {
       \  'javascript.jsx' : {
       \      'extends': 'jsx',
       \      'quote_char': "'",
-      \  }
+      \  },
       \}
 
 " Prettier
@@ -58,9 +58,13 @@ nmap <F6> :Goyo<CR>
 
 " Airline
 " Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline#extensions#tabline#fnamemod = ':t'
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 " Devicons:
 let g:webdevicons_enable = 1

@@ -24,8 +24,10 @@ Plug 'Yggdroot/indentLine'
 Plug 'SirVer/ultisnips'
 
 " Status bar:
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'edkolev/tmuxline.vim'
 
 " Git:
 Plug 'tpope/vim-fugitive'
@@ -98,6 +100,13 @@ Plug 'sukima/vim-ember-imports'
 " TPOPE:
 Plug 'tpope/vim-eunuch'
 " " A Vim plugin that provides functions that modify React source files
+" Multiple Cursors:
+Plug 'terryma/vim-multiple-cursors'
+
+" View package json info:
+Plug 'meain/vim-package-info'
+
+   " " A Vim plugin that provides functions that modify React source files
    " Plug 'mvolkmann/vim-react', { 'for': 'javascript.jsx' }
    "
    " " extract partial render, rename tag, select self close tags
