@@ -72,7 +72,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Physics based scrolling:
-Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yuttie/comfortable-motion.vim'
+Plug 'psliwka/vim-smoothie'
 
 " JavaScript support (required by vim-jsx):
 Plug 'pangloss/vim-javascript'
