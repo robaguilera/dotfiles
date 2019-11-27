@@ -91,14 +91,6 @@ let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
 let g:DevIconsDefaultFolderOpenSymbol = ''
 
-" Comfy Scroll
-let g:comfortable_motion_scroll_down_key = "j"
-let g:comfortable_motion_scroll_up_key = "k"
-noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(50)<CR>
-noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-50)<CR>
-let g:comfortable_motion_friction = 80.0
-let g:comfortable_motion_air_drag = 2
-
 " COC
 "Define Error Symbols and colors
 let g:coc_status_warning_sign = ''

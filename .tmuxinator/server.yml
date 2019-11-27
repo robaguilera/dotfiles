@@ -1,9 +1,9 @@
 # /Users/raguilera/.config/tmuxinator/aplos.yml
 <% repo = @args[0] %>
-<% cli = @args[1] %>
-<% command = @args[2] %>
+<% cliTool = @args[1] %>
+<% cliCommand = @args[2] %>
 
-name: aplos
+name: server
 root: ~/aplos/work/
 
 # Optional tmux socket
@@ -45,21 +45,11 @@ root: ~/aplos/work/
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t aplos
 windows:
-  - editor:
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
-      layout: 0c79,341x55,0,0{252x55,0,0,0,89x55,253,0,2}
-      panes:
-        - j <%= repo %> && vim .
-        - cd aplos-styles && vim .
   - terminal:
+      layout: tiled
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
-      layout: 49ef,341x55,0,0[341x44,0,0{170x44,0,0,1,170x44,171,0,3},341x10,0,45{170x10,0,45,4,170x10,171,45,5}]
       panes:
-        - j <%= repo %> && <%= cli %> <%= command %>
-        - j aplos-styles && est
-        - j <%= repo %>
-        - j aplos-styles
+        - j <%= repo %> && <%= cliTool %> <%= cliCommand %>
+        - cd aplos-styles && ember s -p 8081

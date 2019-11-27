@@ -44,7 +44,6 @@ alias vim="nvim"
 
 # VSCODE
 alias code="code-insiders ."
-alias wk="code-insiders ."
 
 # TMUX
 alias tm='$HOME/dotfiles/bin/tm'
