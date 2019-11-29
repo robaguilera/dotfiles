@@ -43,7 +43,7 @@ nnoremap <C-l> <C-w>l
 
 " buffers
 nnoremap <leader>t :bnext<CR>
-nnoremap <leader>tt :bprevious<CR>
+nnoremap <leader>e :bprevious<CR>
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
 nnoremap <leader>bq :bp <BAR> bd #<CR>
