@@ -56,11 +56,9 @@ nnoremap <space> za
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nr :NERDTreeRefreshRoot<CR>
-
 nnoremap <leader>gits :Gstatus<CR>
 nnoremap <leader>gitc :GCommit<CR>
 nnoremap <leader>gitp :GPush<CR>
-
 nnoremap <leader>ll :Limelight!!<cr>
 
 " FZF
@@ -79,3 +77,17 @@ nnoremap <leader>gp :GitGutterPrevHunk<CR>  " git previous
 " Hunk-add and hunk-revert for chunk staging
 nnoremap <Leader>ga :GitGutterStageHunk<CR>  " git add (chunk)
 nnoremap <Leader>gu :GitGutterUndoHunk<CR>   " git undo (chunk)
+
+" plug stuff
+nnoremap <leader>pi :pluginstall
+nnoremap <leader>pc :plugclean
+
+" easy motion
+map <leader><leader>f <plug>(easymotion-overwin-f)
+" s{char}{char} to move to {char}{char}
+map <leader><leader>c <plug>(easymotion-overwin-f2)
+" move to line
+map <leader><leader>l <plug>(easymotion-bd-jk)
+" move to word
+map  <leader><leader>w <plug>(easymotion-bd-w)
+

@@ -1,46 +1,24 @@
-#!/usr/bin/env bash
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-# Install command-line tools using Homebrew.
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Make sure we’re using the latest Homebrew.
-brew update
+# nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
+nvm install stable
 
-# Upgrade any already-installed formulae.
-brew upgrade
-
-# Install GNU core utilities (those that come with macOS are outdated).
-# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+# brew installs
+brew install jesseduffield/lazygit/lazygit
 brew install coreutils
-
-# Install some other useful utilities like `sponge`.
-brew install moreutils
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-brew install findutils
-# Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
-
-brew tap homebrew/versions
-
-# Install `wget` with IRI support.
-brew install wget --with-iri
-
-# Install more recent versions of some macOS tools.
-brew install vim --override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
-brew install homebrew/php/php56 --with-gmp
-
-# Install neovim
-brew install neovim/neovim/neovim
-
-# Install other useful binaries.
-brew install git
-brew install git-lfs
-
-# Media Tools
-brew cask install vlc
-
-brew install tree
-# Remove outdated versions from the cellar.
+brew install gnu-sed
+brew install clojure/tools/clojure
+brew install leiningen
+brew install neovim
+brew install yarn
+brew install fzf
+brew install ripgrep
+brew install zsh-syntax-highlighting
+brew install fasd
+brew install yarn
 brew cleanup

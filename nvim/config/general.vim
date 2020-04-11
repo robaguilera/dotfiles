@@ -25,7 +25,7 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
-set backspace=2
+set backspace=indent,eol,start
 
 " Store lots of :cmdline history
 set history=200
@@ -86,6 +86,7 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
+set showtabline=224
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
@@ -103,6 +104,9 @@ set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
 set mouse=a " Enable scrolling with mouse
+
+" Don't automatically insert a comma
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Jump to the last known position when reopening a file.
 if has("autocmd")

@@ -2,6 +2,9 @@
 
 let g:LanguageClient_autoStart = 1 " Automatically start language servers
 
+" Rainbow Parens
+let g:rainbow_active = 1
+
 " Emmett:
 
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")  " Make emmet easier to invoke
@@ -55,25 +58,25 @@ set updatetime=250
 " Goyo
 nmap <F6> :Goyo<CR>
 
-
-" Airline
-" Enable the list of buffers
-" let g:airline#extensions#tabline#enabled = 1
-" Show just the filename
-" let g:airline#extensions#tabline#fnamemod = ':t'
 " Lightline
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-      \   'right': [[ 'filetype' ]]
+      \   'right': [[ 'filetype']]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
       \   'fileformat': '',
       \ },
       \ }
+let g:lightline#bufferline#shorten_path = 1
+let g:lightline#bufferline#unnamed      = '[No Name]'
+
+let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type   = {'buffers': 'tabsel'}
 
 " Devicons:
 let g:webdevicons_enable = 1
@@ -171,11 +174,3 @@ let g:strip_whitespace_on_save=1
 let g:strip_whitelines_at_eof=1
 let g:strip_whitespace_confirm=0
 
-" Easy Motion
-map <leader><leader>f <Plug>(easymotion-overwin-f)
-" s{char}{char} to move to {char}{char}
-map <leader><leader>c <Plug>(easymotion-overwin-f2)
-" Move to line
-map <leader><leader>l <Plug>(easymotion-bd-jk)
-" Move to word
-map  <leader><Leader>w <Plug>(easymotion-bd-w)

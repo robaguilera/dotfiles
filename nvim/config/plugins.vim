@@ -17,16 +17,20 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" Clojure:
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-salve'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fireplace'
+
 " Indent Guides:
 Plug 'Yggdroot/indentLine'
 
-" Code Snippets Engine:
-Plug 'SirVer/ultisnips'
-
 " Status bar:
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'edkolev/tmuxline.vim'
 
 " Git:
@@ -50,6 +54,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sjl/badwolf'
+Plug 'luochen1990/rainbow'
 
 " Neovim: {{{
 if has('nvim')
@@ -84,51 +89,19 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 " Emmet:
 Plug 'mattn/emmet-vim'
 
-" Vim Better Whitespace
-Plug 'ntpeters/vim-better-whitespace'
-
 " Improved motion in Vim
 Plug 'easymotion/vim-easymotion'
 
 " highlights template strings
 Plug 'Quramy/vim-js-pretty-template'
 
-" Ember:
-Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'sukima/vim-javascript-imports'
-Plug 'sukima/vim-ember-imports'
-
 " TPOPE:
 Plug 'tpope/vim-eunuch'
-" " A Vim plugin that provides functions that modify React source files
+
 " Multiple Cursors:
 Plug 'terryma/vim-multiple-cursors'
 
 " View package json info:
 Plug 'meain/vim-package-info'
-
-   " " A Vim plugin that provides functions that modify React source files
-   " Plug 'mvolkmann/vim-react', { 'for': 'javascript.jsx' }
-   "
-   " " extract partial render, rename tag, select self close tags
-   " Plug 'samuelsimoes/vim-jsx-utils', { 'for': 'javascript.jsx' }
-
-
- " JSON manipulation
- " Plug 'tpope/vim-jdaddy', { 'for': 'json' }
-
- " syntax highlighting for styled components
- " Plug 'styled-components/vim-styled-components', { 'branch': 'main', 'for': 'javascript.jsx' }
-
- " ?? What do these do?? "
- " Plug 'Yggdroot/indentLine', { 'on' : 'IndentLinesEnable'}
- " autocmd! User indentline doautocmd indentLine Syntax
- " Plug 'skywind3000/asyncrun.vim'
- " Plug 'tommcdo/vim-fubitive'
- " Plug 'Raimondi/delimitMate'
- " Plug 'terryma/vim-expand-region'
- " Plug 'adelarsq/vim-matchit'
- " Plug 'tpope/vim-sleuth'
-
 
 call plug#end()
