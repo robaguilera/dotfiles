@@ -36,6 +36,10 @@ set ruler
 " Show incomplete cmds down the bottom
 set showcmd
 
+" Don't give completion messages like 'match 1 of 2'
+" or 'The only match'
+set shortmess+=c
+
 " Ignore case in searches
 set ignorecase
 
@@ -57,8 +61,8 @@ set clipboard^=unnamed,unnamedplus
 
 " Aesthetics
 set background=dark
-colorscheme badwolf
-let g:airline_theme='badwolf'
+colorscheme synthwave84
+let g:airline_theme='synthwave84'
 
 " Switching files without causes file to hide, not close
 set hidden
@@ -91,10 +95,10 @@ set showtabline=224
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
-" Set folds by syntax of current language
-set foldmethod=manual
-let javaScript_fold=1
+" Set folds by syntax of current language {{{
+set foldmethod=indent
 set foldlevelstart=99
+" }}}
 
 set wildmenu
 set wildmode=longest:full,full

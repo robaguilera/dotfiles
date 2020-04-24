@@ -6,19 +6,6 @@
 
 if $(command -v fzf >/dev/null); then
 
-  # cd to selected directory
-  fcd() {
-    local dir
-      dir=$(fzf +m) &&
-      cd "$dir"
-  }
-
-  # including hidden directories
-  fchd() {
-    local dir
-      dir=$(fzf +m) && cd "$dir"
-  }
-
   # open in vscode to selected directory
   fcode() {
     local dir
@@ -39,6 +26,12 @@ if $(command -v fzf >/dev/null); then
       local dir
       file=$(fzf +m -q "$1") && dir=$(dirname "$file") && nvim "$file"
   }
+  vz() {
+    local file
+    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+  }
+
+
 
   # repeat history
   fh() {

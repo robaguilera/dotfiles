@@ -44,6 +44,8 @@ let g:NERDTreeIndicatorMapCustom = {
         \ "unknown"   : "?"
         \ }
 let nerdchristmastree=1
+" Hide certain files and directories from NERDTree
+let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 
 " Git Gutter
 let g:gitgutter_sign_added = '+'

@@ -49,11 +49,7 @@ Plug 'kristijanhusak/vim-carbon-now-sh'
 
 " Styling Vim:
 Plug 'arcticicestudio/nord-vim'
-Plug 'dracula/vim'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'arcticicestudio/nord-vim'
-Plug 'sjl/badwolf'
+Plug 'artanikin/vim-synthwave84'
 Plug 'luochen1990/rainbow'
 
 " Neovim: {{{
@@ -101,7 +97,6 @@ Plug 'tpope/vim-eunuch'
 " Multiple Cursors:
 Plug 'terryma/vim-multiple-cursors'
 
-" View package json info:
-Plug 'meain/vim-package-info'
 
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
