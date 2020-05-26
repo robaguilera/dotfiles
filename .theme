@@ -1,3 +1,2 @@
-SPACESHIP_PROMPT_SYMBOL="🚀" 
-SPACESHIP_GIT_BRANCH_PREFIX=""
-SPACESHIP_PACKAGE_SHOW=false
+autoload -U promptinit; promptinit
+prompt pure

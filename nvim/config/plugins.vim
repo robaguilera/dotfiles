@@ -95,7 +95,7 @@ Plug 'Quramy/vim-js-pretty-template'
 Plug 'tpope/vim-eunuch'
 
 " Multiple Cursors:
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 
 
 Plug 'ryanoasis/vim-devicons'
