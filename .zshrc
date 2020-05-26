@@ -1,16 +1,18 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.config/yarn/global/node_modules/bin:.rbenv/bin:/opt/aplos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:$PATH
+export PATH=$HOME/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+# Disable Insecure Warning
+ZSH_DISABLE_COMPFIX=true
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-SPACESHIP_PACKAGE_SHOW=false
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_EMBER_SHOW=false
-ZSH_THEME="spaceship"
+# SPACESHIP_PACKAGE_SHOW=false
+# SPACESHIP_TIME_SHOW=true
+# SPACESHIP_EMBER_SHOW=false
+# ZSH_THEME="steeef"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -18,10 +20,7 @@ CASE_SENSITIVE="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Plugins
 plugins=(git vi-mode history-substring-search fasd)
 
 source $ZSH/oh-my-zsh.sh
@@ -38,6 +37,4 @@ export NVM_DIR="$HOME/.nvm"
 alias node='unalias node ; unalias npm ; nvm use default ; node $@'
 alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
-source /Users/robertaguilera/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-eval "$(rbenv init -)"
-
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
