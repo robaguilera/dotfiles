@@ -54,3 +54,4 @@
 
 (setq
  projectile-project-search-path '("~/Projects"))
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
