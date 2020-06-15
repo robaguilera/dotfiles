@@ -46,3 +46,11 @@
 ;; our package manager can't deal with; see raxod502/straight.el#279)
 ;(package! builtin-package :recipe (:branch "develop"))
 
+;; Misc stuff
+;; Can highlight a region and hit M-x carbon-now-sh to get a
+;; https://carbon.now.sh of the region
+(package! carbon-now-sh)
+
+;; JS stuff
+(package! prettier-js)
+(package! olivetti)
