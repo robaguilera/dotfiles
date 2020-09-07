@@ -5,14 +5,6 @@
 # export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 
 if $(command -v fzf >/dev/null); then
-
-  # open in vscode to selected directory
-  fcode() {
-    local dir
-      dir=$(fzf +m) &&
-      code "$dir"
-  }
-
   # cd into the directory of the selected file
   ffile() {
     local file
@@ -26,25 +18,11 @@ if $(command -v fzf >/dev/null); then
       local dir
       file=$(fzf +m -q "$1") && dir=$(dirname "$file") && nvim "$file"
   }
-  vz() {
-    local file
-    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
-  }
-
 
 
   # repeat history
   fh() {
     print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-  }
-
-  # kill process
-  fkill() {
-    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-
-      if [ "x$pid" != "x" ]; then
-        kill -${1:-9} $pid
-          fi
   }
 
   # git:
@@ -63,39 +41,6 @@ if $(command -v fzf >/dev/null); then
     branch=$(echo "$branches" |
              fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
     git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-  }
-
-  # checkout git branch/tag
-  fgcb() {
-    local tags branches target
-      tags=$(
-          git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}'
-          ) || return
-      branches=$(
-          git branch --all | grep -v HEAD |
-          sed "s/.* //" | sed "s#remotes/[^/]*/##" |
-          sort -u | awk '{print "\x1b[34;1mbranch\x1b[m\t" $1}'
-          ) || return
-      target=$(
-          (
-           echo "$tags"
-           echo "$branches"
-          ) |
-          fzf-tmux -l30 -- --no-hscroll --ansi +m -d "\t" -n 2
-          ) || return
-      git checkout $(echo "$target" | awk '{print $2}')
-  }
-
-  fgco() {
-    local branches target
-    branches=$(
-      git branch --all | grep -v HEAD             |
-      sed "s/.* //"    | sed "s#remotes/[^/]*/##" |
-      sort -u          | awk '{print "\x1b[34;1mbranch\x1b[m\t" $1}') || return
-    target=$(
-      (echo "$branches") |
-      fzf-tmux -l30 -- --no-hscroll --ansi +m -d "\t" -n 2) || return
-    git checkout $(echo "$target" | awk '{print $2}')
   }
 
   # checkout git commit

@@ -54,3 +54,4 @@
 ;; JS stuff
 (package! prettier-js)
 (package! olivetti)
+(package! clj-refactor)

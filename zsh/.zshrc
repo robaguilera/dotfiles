@@ -27,7 +27,7 @@ source $ZSH/oh-my-zsh.sh
 
 # My Customizations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ -f ~/dotfiles/.zshrc-plus ]] && source ~/dotfiles/.zshrc-plus
+[[ -f ~/dotfiles/zsh/.zshrc-plus ]] && source ~/dotfiles/zsh/.zshrc-plus
 [[ -f ~/.workAliases ]] && source ~/.workAliases
 
 # Load NVM when needed - speeds up inital load time of ZSH
