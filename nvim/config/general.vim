@@ -5,6 +5,9 @@ augroup specify_filetype
   autocmd BufRead,BufNewFile *.txt set filetype=text
 augroup END
 
+set encoding=UTF-8
+
+
 " Longer leader key timeout
 set timeout timeoutlen=500
 

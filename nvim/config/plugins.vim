@@ -13,6 +13,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" Markdown:
+Plug 'plasticboy/vim-markdown'
+Plug 'mzlogin/vim-markdown-toc'
+
 " FZF:
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -50,7 +54,9 @@ Plug 'kristijanhusak/vim-carbon-now-sh'
 " Styling Vim:
 Plug 'arcticicestudio/nord-vim'
 Plug 'artanikin/vim-synthwave84'
-Plug 'luochen1990/rainbow'
+Plug 'sainnhe/edge'
+let g:edge_style = 'neon'
+let g:edge_enable_italic = 1
 
 " Neovim: {{{
 if has('nvim')
