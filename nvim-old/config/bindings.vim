@@ -19,10 +19,10 @@ noremap  <silent> <Home> g<Home>
 noremap  <silent> <End>  g<End>
 
 " Moving lines
-nnoremap <silent> <C-k> :move-2<cr>
-nnoremap <silent> <C-j> :move+<cr>
-xnoremap <silent> <C-k> :move-2<cr>gv
-xnoremap <silent> <C-j> :move'>+<cr>gv
+" nnoremap <silent> <C-k> :move-2<cr>
+" nnoremap <silent> <C-j> :move+<cr>
+" xnoremap <silent> <C-k> :move-2<cr>gv
+" xnoremap <silent> <C-j> :move'>+<cr>gv
 nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
 inoremap <S-Tab> <C-D>
@@ -38,8 +38,8 @@ imap jj <esc>
 " split window management
 nnoremap <leader>j :split<CR>
 nnoremap <leader>l :vsplit<CR>
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
 
 " buffers
 nnoremap <leader>t :bnext<CR>
@@ -49,7 +49,7 @@ nnoremap <leader>e :bprevious<CR>
 nnoremap <leader>bq :bp <BAR> bd #<CR>
 
 " folding code
-nnoremap <space> za
+" nnoremap <space> za
 
 " plugins
 

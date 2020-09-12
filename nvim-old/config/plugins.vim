@@ -8,6 +8,10 @@ endif
 " Start plugin installs
 call plug#begin('~/.local/share/nvim/plugged')
 
+if exists('g:vscode')
+  source $HOME/dotfiles/nvim/vscode/settings.vim
+else
+
 " Nerdtree:
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -105,4 +109,5 @@ Plug 'mg979/vim-visual-multi'
 
 
 Plug 'ryanoasis/vim-devicons'
+endif
 call plug#end()

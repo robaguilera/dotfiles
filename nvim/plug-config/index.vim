@@ -1,0 +1,19 @@
+source $HOME/dotfiles/nvim/plug-config/plugins.vim
+
+source $HOME/dotfiles/nvim/plug-config/coc.vim
+source $HOME/dotfiles/nvim/plug-config/codi.vim
+source $HOME/dotfiles/nvim/plug-config/easy-motion.vim
+source $HOME/dotfiles/nvim/plug-config/emmett.vim
+source $HOME/dotfiles/nvim/plug-config/far.vim
+source $HOME/dotfiles/nvim/plug-config/fzf.vim
+source $HOME/dotfiles/nvim/plug-config/misc.vim
+source $HOME/dotfiles/nvim/plug-config/nerdtree.vim
+source $HOME/dotfiles/nvim/plug-config/polyglot.vim
+source $HOME/dotfiles/nvim/plug-config/prettier.vim
+source $HOME/dotfiles/nvim/plug-config/ranger.vim
+source $HOME/dotfiles/nvim/plug-config/rainbow.vim
+source $HOME/dotfiles/nvim/plug-config/source-control.vim
+source $HOME/dotfiles/nvim/plug-config/tagalong.vim
+source $HOME/dotfiles/nvim/plug-config/themes.vim
+source $HOME/dotfiles/nvim/plug-config/vista.vim
+source $HOME/dotfiles/nvim/plug-config/vim-sneak.vim

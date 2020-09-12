@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH="/usr/local/bin:/usr/local/sbin:~/dotfiles/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh

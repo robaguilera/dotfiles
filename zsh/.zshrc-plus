@@ -4,7 +4,5 @@ for file in ~/dotfiles/zsh/.{theme,aliases,gitAliases,exports,functions,fzfLove}
 done;
 unset file;
 
-source ~/.enhancd/init.sh
-
 HISTSIZE=3000
 SAVEHIST=3000
