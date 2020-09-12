@@ -23,6 +23,7 @@ brew cask install notion
 brew cask install alfred
 brew cask install dropbox
 brew cask install iterm2
+brew cask install rectangle
 brew cask install slack
 brew cask install spotify
 brew cask install homebrew/cask-versions/firefox-nightly # Nightly
