@@ -60,7 +60,6 @@ installNeovim() {
   brew install --HEAD neovim
 }
 
-
 pipinstallueberzug() { \
   which pip3 > /dev/null && pip3 install ueberzug || echo "Not installing ueberzug pip not found"
 }
@@ -75,6 +74,8 @@ which node > /dev/null && echo "node installed, moving on..." || asktoinstallnod
 pip3 list | grep pynvim > /dev/null && echo "pynvim installed, moving on..." || installpynvim
 
 
+installNeovim
+
 # move old nvim directory if it exists
 [ -d "$HOME/.config/nvim" ] && moveoldnvim
 
@@ -82,7 +83,8 @@ pip3 list | grep pynvim > /dev/null && echo "pynvim installed, moving on..." || 
 [ -d "$HOME/.config/coc" ] && moveoldcoc
 
 configureNeovim
-#installcocextensions
+installcocextensions
+pipinstallueberzug
 
 echo "I recommend you also install and activate a font from here: https://github.com/ryanoasis/nerd-fonts"
 
