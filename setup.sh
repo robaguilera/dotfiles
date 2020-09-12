@@ -3,11 +3,11 @@
 # Install oh-my-zsh
 source scripts/oh-my-zsh.sh
 
-# Install apps and binaries with Brew
-source scripts/brew.sh
-
 # Link Dotfiles
 source scripts/link-dotfiles.sh
+
+# Install apps and binaries with Brew
+source scripts/brew.sh
 
 # Install nvm and node packages
 source scripts/npm.sh
