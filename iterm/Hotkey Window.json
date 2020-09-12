@@ -35,6 +35,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.73586553335189819
   },
+  "Blend" : 0.5,
   "Mouse Reporting" : true,
   "Ansi 4 Color" : {
     "Red Component" : 0.34117650985717773,
@@ -290,9 +291,9 @@
     "Alpha Component" : 1,
     "Green Component" : 0.78039222955703735
   },
-  "Window Type" : 12,
+  "Window Type" : 2,
   "Use Bright Bold" : true,
-  "Has Hotkey" : false,
+  "Has Hotkey" : true,
   "HotKey Modifier Activation" : 3,
   "Cursor Text Color" : {
     "Red Component" : 0.15686270594596863,
@@ -317,9 +318,9 @@
     "Alpha Component" : 1,
     "Green Component" : 0.36078426241874695
   },
-  "Name" : "Default",
+  "Name" : "Hotkey Window",
   "Blinking Cursor" : true,
-  "Guid" : "8A3F693D-0FC5-41C9-943E-28B9A425B261",
+  "Guid" : "C76394DC-CD04-45CA-9215-7EF7223BA6C0",
   "Idle Code" : 0,
   "Ansi 10 Color" : {
     "Red Component" : 0.35294127464294434,
@@ -343,6 +344,7 @@
     "Green Component" : 0.1491314172744751
   },
   "Ambiguous Double Width" : false,
+  "Blur Radius" : 8.1417909263959398,
   "Cursor Type" : 0,
   "Ansi 0 Color" : {
     "Red Component" : 0,
@@ -351,8 +353,8 @@
     "Alpha Component" : 1,
     "Green Component" : 0
   },
-  "Blur" : false,
-  "Normal Font" : "JetBrainsMonoNerdFontCompleteM-Regular 16",
+  "Blur" : true,
+  "Normal Font" : "FiraMonoForPowerline-Regular 16",
   "Vertical Spacing" : 1,
   "Ansi 7 Color" : {
     "Red Component" : 0.94509810209274292,
@@ -361,6 +363,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.94509810209274292
   },
+  "Space" : -1,
   "HotKey Window AutoHides" : false,
   "Command" : "",
   "Terminal Type" : "xterm-256color",
@@ -375,7 +378,6 @@
     "Alpha Component" : 1,
     "Green Component" : 0.94509810209274292
   },
-  "Unicode Version" : 8,
   "Ansi 6 Color" : {
     "Red Component" : 0.60392171144485474,
     "Color Space" : "sRGB",
@@ -383,7 +385,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.92941170930862427
   },
-  "Transparency" : 0.081680282360406087,
+  "Transparency" : 0.13346882931472082,
   "HotKey Activated By Modifier" : true,
   "Background Color" : {
     "Red Component" : 0.15686270594596863,
@@ -392,9 +394,10 @@
     "Alpha Component" : 1,
     "Green Component" : 0.16470584273338318
   },
-  "Screen" : -2,
+  "Screen" : -1,
+  "Initial Use Transparency" : true,
   "HotKey Characters Ignoring Modifiers" : "",
-  "Non Ascii Font" : "JetBrainsMonoNerdFontCompleteM-Regular 12",
+  "Non Ascii Font" : "FiraMonoForPowerline-Regular 12",
   "Ansi 13 Color" : {
     "Red Component" : 1,
     "Color Space" : "sRGB",
