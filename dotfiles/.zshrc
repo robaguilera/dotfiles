@@ -21,7 +21,7 @@ CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(git vi-mode history-substring-search fasd)
+plugins=(vi-mode history-substring-search fasd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
