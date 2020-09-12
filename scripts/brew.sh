@@ -2,7 +2,7 @@
 # Welcome
 echo "Heya, starting install..."
 
-if [[ $(command -v brew) == "" ]]; then 
+if [[ $(command -v brew) == "" ]]; then
     echo "Installing Homebrew.. "
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 else
@@ -14,10 +14,11 @@ fi
 brew install ripgrep
 brew install fzf
 $(brew --prefix)/opt/fzf/install
-brew install ranger 
+brew install ranger
 brew install yarn
-brew install fasd 
+brew install fasd
 brew install imagemagick
+brew install luarocks
 brew cask install notion
 brew cask install alfred
 brew cask install dropbox

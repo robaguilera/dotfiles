@@ -60,10 +60,6 @@ installNeovim() {
   brew install --HEAD neovim
 }
 
-pipinstallueberzug() { \
-  which pip3 > /dev/null && pip3 install ueberzug || echo "Not installing ueberzug pip not found"
-}
-
 # install pip
 which pip3 > /dev/null && echo "pip installed, moving on..." || asktoinstallpip
 
@@ -84,7 +80,6 @@ installNeovim
 
 configureNeovim
 installcocextensions
-pipinstallueberzug
 
 echo "I recommend you also install and activate a font from here: https://github.com/ryanoasis/nerd-fonts"
 
