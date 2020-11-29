@@ -12,7 +12,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-commentary'
     " Repeat stuff
     Plug 'tpope/vim-repeat'
-    " Useful for React Commenting 
+    " Useful for React Commenting
     Plug 'suy/vim-context-commentstring'
 
   if exists('g:vscode')

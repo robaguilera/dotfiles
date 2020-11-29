@@ -1,3 +1,7 @@
+if exists('g:vscode')
+  source $HOME/.config/nvim/vscode/settings.vim
+  source $HOME/.config/nvim/plug-config/easymotion.vim
+endif
 
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set formatoptions-=cro                  " Stop newline continution of comments

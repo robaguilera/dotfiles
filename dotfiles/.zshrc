@@ -33,4 +33,4 @@ source $ZSH/oh-my-zsh.sh
 # Load NVM when needed - speeds up inital load time of ZSH
 # https://github.com/nvm-sh/nvm/issues/539#issuecomment-245791291
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+source "$NVM_DIR/nvm.sh"
