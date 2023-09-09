@@ -1,5 +1,5 @@
 " ===== Custom Settings ==== "
-let mapleader = ','
+let mapleader = ' '
 nnoremap <Space> <Nop>
 
 imap <C-h> <C-w>h

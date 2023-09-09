@@ -1,25 +1,19 @@
 " auto-install vim-plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
+" if empty(glob('~/.config/nvim/autoload/plug.vim'))
+"   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+"     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"   "autocmd VimEnter * PlugInstall
+"   autocmd VimEnter * PlugInstall | source $MYVIMRC
+" endif
 
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('~/.config/nvim/autoload/plugled')
 
     " Better Comments
     Plug 'tpope/vim-commentary'
-    " Repeat stuff
+    " " Repeat stuff
     Plug 'tpope/vim-repeat'
-    " Useful for React Commenting
+    " " Useful for React Commenting
     Plug 'suy/vim-context-commentstring'
-
-  if exists('g:vscode')
-    " Easy motion for VSCode
-    Plug 'asvetliakov/vim-easymotion'
-  else
-
     " Sneak
     Plug 'justinmk/vim-sneak'
     " Surround
@@ -28,16 +22,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'airblade/vim-rooter'
     " auto set indent settings
     Plug 'tpope/vim-sleuth'
-    " Better Syntax Support
+    " " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     " Cool Icons
-    Plug 'ryanoasis/vim-devicons'
+    " Plug 'ryanoasis/vim-devicons'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Closetags
     Plug 'alvan/vim-closetag'
     " Themes
-    Plug 'christianchiarulli/nvcode.vim'
+    " Plug 'christianchiarulli/nvcode.vim'
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Status Line
@@ -46,36 +40,36 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    " Git
+    " " Git
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
     Plug 'rhysd/git-messenger.vim'
-    " Terminal
+    " " Terminal
     Plug 'voldikss/vim-floaterm'
-    " Start Screen
+    " " Start Screen
     Plug 'mhinz/vim-startify'
-    " Vista
-    Plug 'liuchengxu/vista.vim'
-    " See what keys do like in emacs
+    " " Vista
+    " Plug 'liuchengxu/vista.vim'
+    " " See what keys do like in emacs
     Plug 'liuchengxu/vim-which-key'
-    " Zen mode
+    " " Zen mode
     Plug 'junegunn/goyo.vim'
-    " Snippets
+    " " Snippets
     Plug 'mattn/emmet-vim'
-    " Interactive code
+    " " Interactive code
     Plug 'metakirby5/codi.vim'
-    " Find and replace
+    " " Find and replace
     Plug 'ChristianChiarulli/far.vim'
-    " Auto change html tags
+    " " Auto change html tags
     Plug 'AndrewRadev/tagalong.vim'
     " live server
-    Plug 'turbio/bracey.vim'
+    " Plug 'turbio/bracey.vim'
     " Smooth scroll
-    Plug 'psliwka/vim-smoothie'
+    " Plug 'psliwka/vim-smoothie'
     " Markdown Preview
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
+    " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
     " Colorizer
     Plug 'norcalli/nvim-colorizer.lua'
     " Better Whitespace
@@ -90,14 +84,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kristijanhusak/vim-carbon-now-sh'
     " Highlights
     Plug 'machakann/vim-highlightedyank'
-    " Multiple Cursors
-    " TODO add this back in change from C-n
-    " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-    Plug 'moll/vim-bbye'
-    " Plug 'yuezk/vim-js'
-    " Plug 'maxmellon/vim-jsx-pretty'
-    " Plug 'jelera/vim-javascript-syntax'
-    " Plugin Graveyard
+    " " Multiple Cursors
+    " " TODO add this back in change from C-n
+    " " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+    " Plug 'moll/vim-bbye'
+    " " Plug 'yuezk/vim-js'
+    " " Plug 'maxmellon/vim-jsx-pretty'
+    " " Plug 'jelera/vim-javascript-syntax'
+    " " Plugin Graveyard
 
     " jsx syntax support
     " Typescript syntax
@@ -127,12 +121,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'preservim/nerdcommenter'
     " Plug 'brooth/far.vim'
     " Plug 'atishay/far.vim'
-  endif
 
 call plug#end()
 
 " Automatically install missing plugins on startup
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
+" autocmd VimEnter *
+"   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+"   \|   PlugInstall --sync | q
+"   \| endif

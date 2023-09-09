@@ -16,4 +16,4 @@ source scripts/npm.sh
 source scripts/vim.sh
 
 # Setup Mac
-source scripts/macos.sh
+# source scripts/macos.sh
