@@ -46,3 +46,10 @@ keymap("n", "<C-S-j>", ":resize +2<CR>", opts)
 keymap("n", "<C-S-k>", ":resize -2<CR>", opts)
 keymap("n", "<C-S-h>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-S-l>", ":vertical resize +2<CR>", opts)
+
+-- Terminal
+vim.api.nvim_set_keymap('t', '<C-t>', '<C-\\><C-n>:ToggleTerm<CR>', {noremap = true, silent = true})
+keymap("t", "<C-h>", "<C-w>h", opts)
+keymap("t", "<C-j>", "<C-w>j", opts)
+keymap("t", "<C-k>", "<C-w>k", opts)
+keymap("t", "<C-l>", "<C-w>l", opts)

@@ -37,6 +37,9 @@ return require('packer').startup(function(use)
 	-- Best plugin ever
     use "folke/which-key.nvim"
 
+    -- Terminal
+    use "akinsho/toggleterm.nvim"
+
 	-- I'm so pretty
 	use { "catppuccin/nvim", as = "catppuccin" }
 

@@ -34,6 +34,11 @@ local mappings = {
             "String",
         },
     },
+    t = {
+        name = "Terminal",
+        f = {"<cmd>ToggleTerm direction=float<CR>", "Float"},
+        t = {"<cmd>ToggleTerm<CR>", "Toggle"},
+    },
     w = {
         name = "Window mgnt",
         s = {
