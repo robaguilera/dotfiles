@@ -1,4 +1,5 @@
 require('toggleterm').setup({
-    size = 10,
+    shade_terminal = true,
+    size = 5,
     start_in_insert = true,
 })

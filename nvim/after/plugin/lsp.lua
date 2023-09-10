@@ -5,6 +5,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
+  'pyright',
 })
 
 -- Fix Undefined global 'vim'
@@ -16,7 +17,7 @@ local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ['<CR>'] = cmp.mapping.confirm({ select = false }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
@@ -51,6 +52,26 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+local root_files = {
+  'pyproject.toml',
+  'setup.py',
+  'setup.cfg',
+  'requirements.txt',
+  'Pipfile',
+  'pyrightconfig.json',
+  '.git',
+}
+
+-- local lspconfig = require('lspconfig')
+
+-- lspconfig.pyright.setup({
+--     on_attach = function(client, bufnr)
+--         print('hello py')
+--     end,
+--     root_dir = lspconfig.util.root_pattern(unpack(root_files))
+
+-- })
 
 lsp.setup()
 

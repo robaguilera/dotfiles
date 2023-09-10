@@ -39,6 +39,13 @@ local mappings = {
         f = {"<cmd>ToggleTerm direction=float<CR>", "Float"},
         t = {"<cmd>ToggleTerm<CR>", "Toggle"},
     },
+    x = {
+        name = "Tmux",
+        h = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
+        l = { "<cmd> TmuxNavigateRight<CR>", "window right" },
+        j = { "<cmd> TmuxNavigateDown<CR>", "window down" },
+        k = { "<cmd> TmuxNavigateUp<CR>", "window up" },
+    },
     w = {
         name = "Window mgnt",
         s = {
