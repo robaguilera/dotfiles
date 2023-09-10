@@ -40,6 +40,13 @@ return require("packer").startup(function(use)
 
 	-- Git
 	use("tpope/vim-fugitive")
+	use({
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 
 	-- Best plugin ever
 	use("folke/which-key.nvim")
