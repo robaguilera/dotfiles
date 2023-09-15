@@ -27,4 +27,6 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.g.python3_host_prog = '~/.pyenv/versions/nvim/bin/python'
+vim.g.python3_host_prog = "~/.pyenv/versions/nvim/bin/python"
+
+vim.notify = require("notify")

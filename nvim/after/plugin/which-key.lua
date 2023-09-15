@@ -22,15 +22,15 @@ local mappings = {
 			"Buffer",
 		},
 		g = {
-			"<cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{previewer = true})<cr>",
-			"Git file",
+			"<cmd>Telescope git_files<CR>",
+			"Git files",
 		},
 		f = {
-			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = true})<cr>",
+			"<cmd>Telescope find_files<CR>",
 			"Files",
 		},
 		s = {
-			"<cmd>lua require('telescope.builtin').grep_string(require('telescope.themes').get_dropdown{previewer = true})<cr>",
+			"<cmd>Telescope grep_string<CR>",
 			"String",
 		},
 	},
@@ -50,17 +50,14 @@ local mappings = {
 		j = { "<cmd> TmuxNavigateDown<CR>", "window down" },
 		k = { "<cmd> TmuxNavigateUp<CR>", "window up" },
 	},
-	w = {
-		name = "Window mgnt",
-		s = {
-			name = "Split",
-			h = { "<cmd>sp<CR>", "Horizontal" },
-			v = { "<cmd>vs<CR>", "Vertical" },
-		},
+	s = {
+		name = "Split",
+		h = { "<cmd>sp<CR>", "Horizontal" },
+		v = { "<cmd>vs<CR>", "Vertical" },
 	},
-	["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
-	["s"] = { "<cmd>w!<CR>", "Save" },
+	["e"] = { "<cmd>Oil<CR>", "Explorer" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
+	["w"] = { "<cmd>w!<CR>", "Save" },
 }
 
 which_key.register(mappings, opts)

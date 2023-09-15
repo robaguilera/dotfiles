@@ -18,14 +18,16 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
+	use("nvim-telescope/telescope.nvim")
 	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 	})
+
 	-- Navigating
-	use("nvim-tree/nvim-tree.lua")
-	use("nvim-tree/nvim-web-devicons")
+	-- use("nvim-tree/nvim-tree.lua")
+	-- use("nvim-tree/nvim-web-devicons")
+	use("stevearc/oil.nvim")
 
 	-- Status
 	use({ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } })
@@ -34,6 +36,53 @@ return require("packer").startup(function(use)
 	use("tpope/vim-commentary")
 	use("tpope/vim-surround")
 	use("jiangmiao/auto-pairs")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("rcarriga/nvim-notify")
+	use({
+		"folke/flash.nvim",
+		keys = {
+			{
+				"s",
+				mode = { "n", "o", "x" },
+				function()
+					require("flash").jump()
+				end,
+				desc = "Flash",
+			},
+			{
+				"S",
+				mode = { "n", "o", "x" },
+				function()
+					require("flash").treesitter()
+				end,
+				desc = "Flash Treesitter",
+			},
+			{
+				"r",
+				mode = "o",
+				function()
+					require("flash").remote()
+				end,
+				desc = "Remote Flash",
+			},
+			{
+				"R",
+				mode = { "o", "x" },
+				function()
+					require("flash").treesitter_search()
+				end,
+				desc = "Treesitter Search",
+			},
+			{
+				"<c-s>",
+				mode = { "c" },
+				function()
+					require("flash").toggle()
+				end,
+				desc = "Toggle Flash Search",
+			},
+		},
+	})
 
 	-- Tmux
 	use({ "christoomey/vim-tmux-navigator", lazy = false })
