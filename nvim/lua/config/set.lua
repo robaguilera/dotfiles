@@ -1,32 +1,41 @@
-vim.opt.guicursor = ""
-vim.opt.timeoutlen = 300
+local opt = vim.opt
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+opt.guicursor = ""
+opt.timeoutlen = 300
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+-- line numbers
+opt.relativenumber = true -- show relative line numbers
+opt.number = true         -- shows absolute line number on cursor line (when relative number is on)
 
-vim.opt.smartindent = true
+-- tabs & indentation
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true  -- expand tab to spaces
+opt.autoindent = true -- copy indent from current line when starting new one
+opt.smartindent = true
 
-vim.opt.wrap = false
+opt.cursorline = true -- highlight the current cursor line
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undofile = true
+opt.termguicolors = true
+opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+opt.wrap = false
 
-vim.opt.termguicolors = true
+opt.swapfile = false
+opt.backup = false
+opt.undofile = true
 
-vim.opt.scrolloff = 8
-vim.opt.isfname:append("@-@")
+opt.hlsearch = false
+opt.incsearch = true
 
-vim.opt.updatetime = 50
+opt.termguicolors = true
+
+opt.scrolloff = 8
+opt.isfname:append("@-@")
+
+opt.updatetime = 50
 
 vim.g.python3_host_prog = "~/.pyenv/versions/nvim/bin/python"
 
-vim.notify = require("notify")
+-- vim.notify = require("notify")
