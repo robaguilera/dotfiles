@@ -20,7 +20,7 @@ opt.cursorline = true -- highlight the current cursor line
 opt.termguicolors = true
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
-opt.wrap = false
+opt.wrap = true
 
 opt.swapfile = false
 opt.backup = false
@@ -37,5 +37,3 @@ opt.isfname:append("@-@")
 opt.updatetime = 50
 
 vim.g.python3_host_prog = "~/.pyenv/versions/nvim/bin/python"
-
--- vim.notify = require("notify")
