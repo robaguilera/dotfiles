@@ -17,6 +17,7 @@ return {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"black", -- python formatter
+				"mypy", -- python linter
 				"pylint", -- python linter
 				"eslint_d", -- js linter
 			},
@@ -43,8 +44,15 @@ return {
 				formatting.stylua, -- lua formatter
 				formatting.isort,
 				formatting.black,
-				diagnostics.pylint.with({
-					prefer_local = "venv/bin",
+				-- diagnostics.pylint.with({
+				-- 	prefer_local = "venv/bin",
+				-- }),
+				diagnostics.mypy.with({
+					-- prefer_local = "venv/bin",
+					extra_args = function()
+						local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_DEFAULT_ENV") or "/usr"
+						return { "--python-executable", virtual .. "/bin/python3" }
+					end,
 				}),
 				diagnostics.eslint_d.with({ -- js/ts linter
 					condition = function(utils)
