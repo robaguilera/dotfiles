@@ -19,7 +19,7 @@ function fs() {
 
 # Programmers logbook
 function lb() {
-	FILE=~/Dropbox/logbook/$(date '+%Y-%m-%d').md
+	FILE=~/Notes/logbook/$(date '+%Y-%m-%d').md
 	if [ ! -f $FILE ]; then
 		echo "1. Consider the problem you're attempting to solve" >> ${FILE}
 		echo "2. Describe your method for solving it" >> ${FILE}
@@ -30,7 +30,7 @@ function lb() {
 }
 
 function til() {
-	FILE=~/Dropbox/til/$(date '+%Y-%m-%d').md
+	FILE=~/Notes/til/$(date '+%Y-%m-%d').md
 	if [ ! -f $FILE ]; then
 	echo "Today I Learned:" >> ${FILE}
 	fi;

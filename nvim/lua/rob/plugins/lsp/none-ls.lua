@@ -16,9 +16,8 @@ return {
 			ensure_installed = {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
-				"black", -- python formatter
+				"ruff", -- python formatter
 				"mypy", -- python linter
-				"pylint", -- python linter
 				"eslint_d", -- js linter
 			},
 		})
@@ -44,9 +43,11 @@ return {
 				formatting.stylua, -- lua formatter
 				formatting.isort,
 				formatting.black,
+				formatting.djlint,
 				-- diagnostics.pylint.with({
 				-- 	prefer_local = "venv/bin",
 				-- }),
+				diagnostics.ruff,
 				diagnostics.mypy.with({
 					-- prefer_local = "venv/bin",
 					extra_args = function()

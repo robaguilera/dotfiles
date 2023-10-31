@@ -1,26 +1,20 @@
 return {
 	"stevearc/oil.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local oil = require("oil")
 
 		oil.setup({
-			-- buf_options = {
-			--     buflisted = false,
-			--     bufhidden = "hide",
-			-- },
+			buf_options = {
+				buflisted = true,
+				bufhidden = "hide",
+			},
 			columns = { "icon" },
-			-- default_file_explorer = true,
-			-- restore_win_options = true,
+			default_file_explorer = true,
 			skip_confirm_for_simple_edits = true,
-			-- float = {
-			--     border = "rounded",
-			-- },
-			-- preview = {
-			--     border = "rounded",
-			-- },
-			-- view_options = {
-			--     show_hidden = true,
-			-- },
+			view_options = {
+				show_hidden = true,
+			},
 		})
 	end,
 }

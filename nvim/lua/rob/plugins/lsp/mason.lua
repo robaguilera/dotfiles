@@ -48,8 +48,10 @@ return {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
+				"ruff", -- python linter
 				"mypy", -- python linter
 				"eslint_d", -- js linter
+				"djlint", -- python template linter
 			},
 		})
 	end,

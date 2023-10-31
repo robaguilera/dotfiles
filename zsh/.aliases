@@ -60,6 +60,4 @@ alias www='python -m SimpleHTTPServer 8000'
 alias speed='speedtest-cli --server 2406 --simple'
 alias j='z'
 
-alias tos='cd ~/thinkorswim && sudo java -jar launcher.jar'
-
 alias py='python3'
