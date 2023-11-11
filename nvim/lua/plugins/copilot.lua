@@ -1,9 +1,10 @@
 return {
 	"jackMort/ChatGPT.nvim",
-	event = { "BufReadPre", "BufNewFile" },
+	cmd = { "ChatGPT", "ChatGPTRun", "ChatGPTEditWithInstruction" },
+	-- event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("chatgpt").setup({
-			api_key_cmd = "pass show nvim/copilot",
+			api_key_cmd = "op read op://personal/OpenAi/text --no-newline",
 		})
 	end,
 	dependencies = {

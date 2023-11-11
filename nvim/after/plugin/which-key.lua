@@ -11,9 +11,29 @@ local opts = {
 local mappings = {
 	b = {
 		name = "Buffers",
-		c = { "<cmd>Bdelete!<CR>", "Close buffer" },
+		c = { "<cmd>bdelete!<CR>", "Close buffer" },
 		n = { "<cmd>bnext<CR>", "Next buffer" },
 		p = { "<cmd>bprevious<CR>", "Previous buffer" },
+	},
+	c = {
+		name = "ChatGPT",
+		c = { "<cmd>ChatGPT<CR>", "ChatGPT" },
+		e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
+		g = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
+		t = { "<cmd>ChatGPTRun translate<CR>", "Translate", mode = { "n", "v" } },
+		k = { "<cmd>ChatGPTRun keywords<CR>", "Keywords", mode = { "n", "v" } },
+		d = { "<cmd>ChatGPTRun docstring<CR>", "Docstring", mode = { "n", "v" } },
+		a = { "<cmd>ChatGPTRun add_tests<CR>", "Add Tests", mode = { "n", "v" } },
+		o = { "<cmd>ChatGPTRun optimize_code<CR>", "Optimize Code", mode = { "n", "v" } },
+		s = { "<cmd>ChatGPTRun summarize<CR>", "Summarize", mode = { "n", "v" } },
+		f = { "<cmd>ChatGPTRun fix_bugs<CR>", "Fix Bugs", mode = { "n", "v" } },
+		x = { "<cmd>ChatGPTRun explain_code<CR>", "Explain Code", mode = { "n", "v" } },
+		r = { "<cmd>ChatGPTRun roxygen_edit<CR>", "Roxygen Edit", mode = { "n", "v" } },
+		l = { "<cmd>ChatGPTRun code_readability_analysis<CR>", "Code Readability Analysis", mode = { "n", "v" } },
+	},
+	e = {
+		name = "Explorer",
+		f = { "<cmd>Oil --float<CR>", "Open floating explorer" },
 	},
 	f = {
 		name = "Find",
@@ -21,22 +41,40 @@ local mappings = {
 			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = true})<cr>",
 			"Buffer",
 		},
-		g = {
-			"<cmd>Telescope git_files<CR>",
-			"Git files",
-		},
 		f = {
 			"<cmd>Telescope find_files<CR>",
 			"Files",
 		},
+		h = {
+			function()
+				require("flash").treesitter_search()
+			end,
+			"Flash treesitter",
+		},
+		p = {
+			"<cmd>Telescope conduct projects<CR>",
+			"Projects",
+		},
 		s = {
-			"<cmd>Telescope grep_string<CR>",
-			"String",
+			function()
+				require("flash").jump()
+			end,
+			"Jump",
+		},
+		S = {
+			"<cmd>Telescope conduct sessions<CR>",
+			"Sessions",
 		},
 	},
-	g = {
-		name = "Git",
-		c = { "<cmd>LazyGit<CR>", "Git client" },
+	l = {
+		name = "LSP",
+		a = { vim.lsp.buf.code_action, "Code actions" },
+		d = { vim.lsp.buf.declaration, "Defs" },
+		D = { "<cmd>Telescope lsp_references<CR>", "Def references" },
+		i = { "<cmd>Telescope lsp_implementations<CR>", "Type implementations" },
+		k = { vim.lsp.buf.hover, "Documentation" },
+		r = { vim.lsp.buf.rename, "Rename" },
+		t = { "<cmd>Telescope lsp_type_definitions<CR>", "Type defs" },
 	},
 	t = {
 		name = "Terminal",
@@ -45,19 +83,26 @@ local mappings = {
 	},
 	x = {
 		name = "Tmux",
-		h = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
-		l = { "<cmd> TmuxNavigateRight<CR>", "window right" },
-		j = { "<cmd> TmuxNavigateDown<CR>", "window down" },
-		k = { "<cmd> TmuxNavigateUp<CR>", "window up" },
+		h = { "<cmd>TmuxNavigateLeft<CR>", "window left" },
+		l = { "<cmd>TmuxNavigateRight<CR>", "window right" },
+		j = { "<cmd>TmuxNavigateDown<CR>", "window down" },
+		k = { "<cmd>TmuxNavigateUp<CR>", "window up" },
 	},
 	w = {
 		name = "Window",
 		s = { "<cmd>vs<CR>", "Vertical" },
 		v = { "<cmd>sp<CR>", "Horizontal" },
 	},
-	["e"] = { "<cmd>Oil<CR>", "Explorer" },
+	s = {
+		name = "Search",
+	},
+	["a"] = { "<cmd>Alpha<CR>", "Alpha" },
+	["g"] = {
+		"<cmd>Telescope git_files<CR>",
+		"Git files",
+	},
 	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["s"] = { "<cmd>w!<CR>", "Save" },
+	["S"] = { "<cmd>w!<CR>", "Save" },
 }
 
 which_key.register(mappings, opts)

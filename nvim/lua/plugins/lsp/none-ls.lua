@@ -19,6 +19,7 @@ return {
 				"ruff", -- python formatter
 				"mypy", -- python linter
 				"eslint_d", -- js linter
+				"stylelint",
 			},
 		})
 

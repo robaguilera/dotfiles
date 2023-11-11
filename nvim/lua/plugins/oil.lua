@@ -11,6 +11,10 @@ return {
 			},
 			columns = { "icon" },
 			default_file_explorer = true,
+			keymaps = {
+				["<C-h>"] = false,
+				["<C-l>"] = false,
+			},
 			skip_confirm_for_simple_edits = true,
 			view_options = {
 				show_hidden = true,

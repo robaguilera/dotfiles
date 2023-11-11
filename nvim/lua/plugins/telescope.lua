@@ -39,8 +39,6 @@ return {
 						"rg",
 						"--files",
 						"--hidden",
-						"-g",
-						"!.git",
 						"--ignore-file",
 						vim.fn.expand("$HOME/.config/nvim/.rignore"),
 					},
@@ -63,5 +61,6 @@ return {
 		require("telescope").load_extension("fzf")
 		require("telescope").load_extension("luasnip")
 		require("telescope").load_extension("live_grep_args")
+		require("telescope").load_extension("conduct")
 	end,
 }
