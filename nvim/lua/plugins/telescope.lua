@@ -62,5 +62,6 @@ return {
 		require("telescope").load_extension("luasnip")
 		require("telescope").load_extension("live_grep_args")
 		require("telescope").load_extension("conduct")
+		require("telescope").load_extension("harpoon")
 	end,
 }
