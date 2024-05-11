@@ -6,7 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export PATH="
-    /opt/homebrew/opt/ruby/bin:
     /Users/rob/.local/bin:
     /Users/rob/Library/Python/3.9/bin:
     ~/dotfiles/bin:$PATH"
@@ -24,13 +23,30 @@ CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(vi-mode history-substring-search fasd zsh-syntax-highlighting)
+plugins=(vi-mode zsh-history-substring-search fasd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 eval $(/opt/homebrew/bin/brew shellenv)
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # My Customizations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -f ~/dotfiles/zsh/.zshrc-plus ]] && source ~/dotfiles/zsh/.zshrc-plus
+
+# bun completions
+[ -s "/Users/rob/.bun/_bun" ] && source "/Users/rob/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/rob/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -42,6 +42,7 @@ return {
 						"--ignore-file",
 						vim.fn.expand("$HOME/.config/nvim/.rignore"),
 					},
+					hidden = true,
 				},
 				lsp_document_symbols = {
 					show_line = true,

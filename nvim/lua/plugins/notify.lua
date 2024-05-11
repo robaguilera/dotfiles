@@ -3,5 +3,6 @@ return {
 	cmd = "Notify",
 	opts = {
 		background_colour = "#000000",
+        timeout = 10000,
 	},
 }

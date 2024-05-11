@@ -4,7 +4,9 @@ return {
 	event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
 	dependencies = {
 		"jay-babu/mason-null-ls.nvim",
+		"nvimtools/none-ls-extras.nvim",
 	},
+	sources = {},
 	config = function()
 		local mason_null_ls = require("mason-null-ls")
 
@@ -28,7 +30,7 @@ return {
 		local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
 		-- to setup format on save
-		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+		local augroup = vim.api.nvim_create_augroup("NoneLsFormatting", {})
 
 		-- configure null_ls
 		null_ls.setup({
@@ -48,7 +50,7 @@ return {
 				-- diagnostics.pylint.with({
 				-- 	prefer_local = "venv/bin",
 				-- }),
-				diagnostics.ruff,
+				-- diagnostics.ruff,
 				diagnostics.mypy.with({
 					-- prefer_local = "venv/bin",
 					extra_args = function()
@@ -56,7 +58,13 @@ return {
 						return { "--python-executable", virtual .. "/bin/python3" }
 					end,
 				}),
-				diagnostics.eslint_d.with({ -- js/ts linter
+				require("none-ls.diagnostics.eslint_d").with({
+					prefer_local = "node_modules/.bin",
+					filter = function(diagnostic)
+						return diagnostic.code == "sort-imports"
+					end,
+				}),
+				require("none-ls.diagnostics.eslint_d").with({ -- js/ts linter
 					condition = function(utils)
 						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
 					end,

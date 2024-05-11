@@ -81,15 +81,15 @@ return {
 				t = { "<CMD>Telescope lsp_type_definitions<CR>", "Type defs" },
 			},
 			t = {
+				name = "Terminal",
+				f = { "<CMD>ToggleTerm direction=float<CR>", "Float" },
+				t = { "<CMD>ToggleTerm<CR>", "Toggle" },
+			},
+			T = {
 				name = "Tab",
 				c = { "<CMD>tabclose<cr>", "Close Tab" },
 				n = { "<CMD>tabnext<cr>", "Next Tab" },
 				p = { "<CMD>tabprevious<cr>", "Next Tab" },
-			},
-			T = {
-				name = "Terminal",
-				f = { "<CMD>ToggleTerm direction=float<CR>", "Float" },
-				t = { "<CMD>ToggleTerm<CR>", "Toggle" },
 			},
 			x = {
 				name = "Tmux",

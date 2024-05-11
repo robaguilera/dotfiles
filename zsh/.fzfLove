@@ -1,3 +1,4 @@
+eval "$(fzf --zsh)"
 # Setting rg as the default source for fzf
 FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
