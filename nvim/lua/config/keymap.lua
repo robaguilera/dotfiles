@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
@@ -9,29 +11,16 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("n", "J", "mzJ`z", opts)
 
 -- Better indenting
--- keymap("v", "<tab>", ">gv", opts)
-
--- when half page jumping
-keymap("n", "<C-d>", "<C-d>zz", opts)
-keymap("n", "<C-u>", "<C-u>zz", opts)
-keymap("n", "n", "nzzzv", opts)
-keymap("n", "N", "Nzzzv", opts)
-
--- (delete to void)
--- vim.keymap.("x", "<leader>p", [["_dP]])
-keymap("n", "<leader>d", '"-d', opts)
-keymap("v", "<leader>d", '"-d', opts)
+keymap("v", "<tab>", ">gv", opts)
 
 -- yank to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap("n", "<leader>Y", [["+Y]], opts)
 
--- replace
-keymap("n", "<leader><leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
-
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
+keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
