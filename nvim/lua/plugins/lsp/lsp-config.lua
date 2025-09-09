@@ -102,6 +102,10 @@ return {
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
 
+		vim.lsp.config("ts_ls", {
+			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+		})
+
 		vim.lsp.config("lua_ls", {
 			settings = {
 				Lua = {

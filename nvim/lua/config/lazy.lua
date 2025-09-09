@@ -20,3 +20,19 @@ require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
 		notify = false,
 	},
 })
+
+require("bufferline").setup({
+	options = {
+		mode = "buffers",
+		separator_style = "slant",
+		-- diagnostics = 'coc',
+		offsets = {
+			{
+				filetype = "NvimTree",
+				text = "File Explorer",
+				highlight = "Directory",
+				separator = true,
+			},
+		},
+	},
+})

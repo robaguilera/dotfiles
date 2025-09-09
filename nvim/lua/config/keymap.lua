@@ -17,11 +17,6 @@ keymap("v", "<tab>", ">gv", opts)
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap("n", "<leader>Y", [["+Y]], opts)
 
-keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
-keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
-
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -40,6 +35,3 @@ keymap("t", "<C-h>", "<C-w>h", opts)
 keymap("t", "<C-j>", "<C-w>j", opts)
 keymap("t", "<C-k>", "<C-w>k", opts)
 keymap("t", "<C-l>", "<C-w>l", opts)
-
--- Plugins
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
