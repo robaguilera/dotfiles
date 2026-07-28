@@ -1,0 +1,34 @@
+# Visuals
+
+# Tab Bar Apperance
+gtk-tabs-location = top
+window-save-state = always
+
+background-opacity = 0.75
+theme = nord
+background = #282c35
+
+# Font
+font-size = 14
+font-thicken = true
+font-feature = liga
+
+# Custom Keybinds
+keybind = ctrl+shift+r = reload_config
+keybind = ctrl+grave_accent = toggle_quick_terminal
+
+# Tab Management
+keybind = ctrl+shift+t = new_tab
+keybind = ctrl+w = close_surface
+keybind = ctrl+tab = next_tab
+keybind = ctrl+shift+tab = previous_tab
+
+# Windows Settings
+window-padding-x = 12
+window-padding-y = 8
+window-theme = auto
+window-inherit-working-directory = true
+window-inherit-font-size = true
+
+# Scrollback
+scrollback-limit = 100000
