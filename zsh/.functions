@@ -3,49 +3,30 @@ function cd {
   builtin cd "$@" && ls -al
 }
 
-# Determine size of a file or total size of a directory
-function fs() {
-	if du -b /dev/null > /dev/null 2>&1; then
-		local arg=-sbh;
-	else
-		local arg=-sh;
-	fi
-	if [[ -n "$@" ]]; then
-		du $arg -- "$@";
-	else
-		du $arg .[^.]* ./*;
-	fi;
-}
-
 # Programmers logbook
 function lb() {
-	FILE=~/Dev/logbook/$(date '+%Y-%m-%d').md
-	if [ ! -f $FILE ]; then
-		echo "1. Consider the problem you're attempting to solve" >> ${FILE}
-		echo "2. Describe your method for solving it" >> ${FILE}
-		echo "3. Describe the process of carrying out the method" >> ${FILE}
-		echo "4. Record what happened, and ask how it could be improved" >> ${FILE}
-	fi;
-	vim $FILE;
+  local dotfiles_dir="${DOTFILES:-$HOME/dotfiles}"
+
+  local file="$dotfiles_dir/notes/logbook/$(date '+%Y-%m-%d').md"
+  mkdir -p "$(dirname "$file")"
+
+  if [ ! -f "$file" ]; then
+    echo "1. Consider the problem you're attempting to solve" >> "$file"
+    echo "2. Describe your method for solving it" >> "$file"
+    echo "3. Describe the process of carrying out the method" >> "$file"
+    echo "4. Record what happened, and ask how it could be improved" >> "$file"
+  fi
+  ${EDITOR:-vim} "$file"
 }
 
 function til() {
-	FILE=~/Notes/til/$(date '+%Y-%m-%d').md
-	if [ ! -f $FILE ]; then
-	echo "Today I Learned:" >> ${FILE}
-	fi;
-	vim $FILE;
-}
+  local dotfiles_dir="${DOTFILES:-$HOME/dotfiles}"
 
-# lazygit
-lg()
-{
-    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+  local file="$dotfiles_dir/notes/til/$(date '+%Y-%m-%d').md"
+  mkdir -p "$(dirname "$file")"
 
-    lazygit "$@"
-
-    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
-            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
-            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
-    fi
+  if [ ! -f "$file" ]; then
+    echo "Today I Learned:" >> "$file"
+  fi
+  ${EDITOR:-vim} "$file"
 }

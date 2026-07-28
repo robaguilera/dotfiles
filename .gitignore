@@ -1,2 +1,6 @@
-.DS_STORE
+.DS_Store
 **/dump.rdb
+
+# Ignore personal log notes while keeping folder structure
+notes/**/*.md
+!notes/**/.gitkeep

@@ -1,0 +1,8 @@
+# macOS specific zsh configuration
+
+# Preferred ls for macOS
+if command -v gls >/dev/null 2>&1; then
+  alias ls="gls --color=auto"
+else
+  alias ls="command ls -G"
+fi

@@ -8,16 +8,7 @@ alias .....="cd ../../../.."
 alias l="ls -al"
 
 # List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
-
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
-
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias lsd="ls -lF | grep --color=never '^d'"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec zsh"
@@ -25,39 +16,17 @@ alias reload="exec zsh"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-# FASD
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # cd with interactive selection
-
 # VIM/NEOVIM
-alias vim="nvim"
+if command -v nvim >/dev/null 2>&1; then
+  alias vim="nvim"
+fi
 
 # TMUX
-alias tm='$HOME/dotfiles/bin/tm'
-alias mux='tmuxinator'
 alias ta='tmux attach'
 alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
 alias killtm='killall tmux'
 
-# Helpers
-alias df='df -h' # disk free, in Gigabytes, not bytes
-alias du='du -h -c' # calculate disk usage for a folder
-
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
-
 # Set TMUX to use 256 colors
 [ -z "$TMUX" ] && export TERM=xterm-256color
-
-# Random Helpers
-alias c='clear'
-alias www='python -m SimpleHTTPServer 8000'
-alias speed='speedtest-cli --server 2406 --simple'
-alias j='z'
-
-alias py='python3'

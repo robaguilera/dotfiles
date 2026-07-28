@@ -1,0 +1,11 @@
+# Linux specific zsh configuration
+
+# Preferred ls for Linux
+alias ls="command ls --color=auto"
+
+# Open command compatibility for Linux
+if ! command -v open >/dev/null 2>&1; then
+  if command -v xdg-open >/dev/null 2>&1; then
+    alias open='xdg-open'
+  fi
+fi

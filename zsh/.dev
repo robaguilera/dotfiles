@@ -1,12 +1,15 @@
-# Load NVM when needed - speeds up inital load time of ZSH
-# https://github.com/nvm-sh/nvm/issues/539#issuecomment-245791291
+# Load NVM when needed
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-# FASD
-eval "$(fasd --init auto)"
 
+# Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [ -d "$PYENV_ROOT/bin" ]; then
+  export PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init - 2>/dev/null)" || true
+  eval "$(pyenv virtualenv-init - 2>/dev/null)" || true
+fi

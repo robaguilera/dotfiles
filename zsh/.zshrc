@@ -5,41 +5,72 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH="
-    /opt/homebrew/opt/ruby/bin:
-    /Users/rob/.local/bin:
-    /Users/rob/Library/Python/3.9/bin:
-    ~/dotfiles/bin:$PATH"
+# XDG Base Directory Standard
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+
+# Redirect Zsh history & completion dump to XDG directories
+[ ! -d "$XDG_DATA_HOME/zsh" ] && mkdir -p "$XDG_DATA_HOME/zsh"
+[ ! -d "$XDG_CACHE_HOME/zsh" ] && mkdir -p "$XDG_CACHE_HOME/zsh"
+export HISTFILE="$XDG_DATA_HOME/zsh/history"
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-${HOST}-${ZSH_VERSION}"
+
+# Dotfiles root directory
+export DOTFILES="${DOTFILES:-$HOME/dotfiles}"
+
+# Base PATH
+export PATH="$HOME/.local/bin:$DOTFILES/bin:$PATH"
+
+# OS-specific PATH adjustments
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  [ -d "$HOME/Library/Python/3.9/bin" ] && export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+  [ -d "/opt/homebrew/opt/ruby/bin" ] && export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+fi
 
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+export ZSH="${ZSH:-$HOME/.oh-my-zsh}"
 
 # Disable Insecure Warning
 ZSH_DISABLE_COMPFIX=true
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# SPACESHIP_PACKAGE_SHOW=false
-# SPACESHIP_TIME_SHOW=true
-# SPACESHIP_EMBER_SHOW=false
-# ZSH_THEME="agnoster"
-
-# Uncomment the following line to use case-sensitive completion.
+# Use case-sensitive completion.
 CASE_SENSITIVE="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
+# Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(vi-mode history-substring-search fasd zsh-syntax-highlighting poetry)
+plugins=(vi-mode zsh-history-substring-search zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
+[ -s "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
 
-eval $(/opt/homebrew/bin/brew shellenv)
+# Homebrew environment detection (macOS / Linuxbrew)
+if command -v brew >/dev/null 2>&1; then
+  eval "$(brew shellenv)"
+elif [[ -x "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x "/usr/local/bin/brew" ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+elif [[ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
+# NVM environment
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# My Customizations
+# Customizations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ -f ~/dotfiles/zsh/.zshrc-plus ]] && source ~/dotfiles/zsh/.zshrc-plus
+[[ -f "$DOTFILES/zsh/.zshrc-plus" ]] && source "$DOTFILES/zsh/.zshrc-plus"
 
+# pnpm
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+else
+  export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
+fi
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac

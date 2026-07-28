@@ -1,8 +1,27 @@
-# Load the following dotfiles
-for file in ~/dotfiles/zsh/.{theme,dev,aliases,gitAliases,exports,functions,fzfLove}; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
+# Resolve dotfiles directory
+DOTFILES_DIR="${DOTFILES:-$HOME/dotfiles}"
+
+# Dynamically source all modular ZSH dotfiles in $DOTFILES_DIR/zsh/
+for file in "$DOTFILES_DIR"/zsh/.*; do
+  [ -f "$file" ] || continue
+  filename="$(basename "$file")"
+  case "$filename" in
+    .|..|.zshrc|.zshrc-plus|*.swp|*.bak|*.old)
+      continue
+      ;;
+    *)
+      [ -r "$file" ] && source "$file"
+      ;;
+  esac
+done
+unset file filename
+
+# Load OS-specific ZSH configuration
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  [ -r "$DOTFILES_DIR/zsh/os/.macos" ] && source "$DOTFILES_DIR/zsh/os/.macos"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  [ -r "$DOTFILES_DIR/zsh/os/.linux" ] && source "$DOTFILES_DIR/zsh/os/.linux"
+fi
 
 HISTSIZE=3000
 SAVEHIST=3000

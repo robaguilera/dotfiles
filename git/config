@@ -1,0 +1,16 @@
+[core]
+	excludesfile = ~/.config/git/ignore
+	editor = nvim
+	autocrlf = input
+
+[init]
+	defaultBranch = main
+
+[push]
+	autoSetupRemote = true
+
+[pull]
+	rebase = false
+
+[color]
+	ui = auto
