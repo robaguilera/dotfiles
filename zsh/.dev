@@ -1,8 +1,3 @@
-# Load NVM when needed
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 if [ -d "$PYENV_ROOT/bin" ]; then
@@ -13,3 +8,12 @@ if command -v pyenv >/dev/null 2>&1; then
   eval "$(pyenv init - 2>/dev/null)" || true
   eval "$(pyenv virtualenv-init - 2>/dev/null)" || true
 fi
+
+# Tool Binaries & Environments
+[ -d "$HOME/.antigravity/antigravity/bin" ] && export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+[ -d "$HOME/.antigravity-ide/antigravity-ide/bin" ] && export PATH="$HOME/.antigravity-ide/antigravity-ide/bin:$PATH"
+[ -d "$HOME/.opencode/bin" ] && export PATH="$HOME/.opencode/bin:$PATH"
+
+# Railway
+[ -s "$HOME/.railway/env" ] && source "$HOME/.railway/env"
+

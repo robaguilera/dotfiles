@@ -1,5 +1,9 @@
 # Make vim the default editor.
-export EDITOR='nvim';
+export EDITOR='nvim'
 
 # Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
-export PYTHONIOENCODING='UTF-8';
+export PYTHONIOENCODING='UTF-8'
+
+# AI & Tool Configurations
+export OLLAMA_METAL_ENABLED=1
+export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
